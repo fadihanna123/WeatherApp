@@ -46,7 +46,6 @@ export default function App() {
           onKeyPress={(event) => {
             if (event.nativeEvent.key == "Enter") {
               getWeather();
-              console.log("hej");
             }
           }}
           onSubmitEditing={() => {
