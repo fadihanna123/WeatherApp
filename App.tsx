@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { StyleSheet, TextInput, View, Image, Button, Text } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Image,
+  Button,
+  Text,
+  Alert,
+} from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import axios from "axios";
 
@@ -7,7 +15,8 @@ export default function App() {
   const [temp, setTemp] = useState<string>("");
   const [dec, setDec] = useState<string>("");
   const [cityName, setCityName] = useState<string>("");
-  const [city, setCity] = useState<string>("");
+  const [cityinput, setCityInput] = useState<string>("");
+  const [Error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [view, setView] = useState<boolean>(false);
 
@@ -16,7 +25,7 @@ export default function App() {
       setLoading(true);
       const { data } = await axios.get(
         "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
-          city,
+          cityinput,
         {
           method: "GET",
           headers: {
@@ -24,12 +33,28 @@ export default function App() {
           },
         }
       );
-      setView(true);
-      setTemp(data.current.temperature);
-      setCityName(data.location.name);
-      setDec(data.current.weather_descriptions[0]);
+      if (!cityinput) {
+        setView(false);
+        setError("Start typing first...");
+      } else {
+        if (
+          data.current.temperature &&
+          data.location.name &&
+          data.current.weather_descriptions[0]
+        ) {
+          setView(true);
+          setTemp(data.current.temperature);
+          setCityName(data.location.name);
+          setDec(data.current.weather_descriptions[0]);
+        }
+        if (!cityinput) {
+          setView(false);
+          setError("Start typing first...");
+        }
+      }
     } catch (err) {
       console.log(err.message);
+      setError("There is no such city in the world....");
     } finally {
       setLoading(false);
     }
@@ -39,14 +64,14 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.inputbox}>
         <TextInput
-          defaultValue={city}
-          onChangeText={(city) => setCity(city)}
+          defaultValue={cityinput}
+          onChangeText={(cityinput) => setCityInput(cityinput)}
           style={styles.textinput}
           placeholder="Search City"
           onKeyPress={(event) => {
-            if (event.nativeEvent.key == "Enter") {
+            if (event.nativeEvent.key == "Enter" && cityinput !== "") {
+              setCityInput("");
               getWeather();
-              console.log("hej");
             }
           }}
           onSubmitEditing={() => {
@@ -79,6 +104,10 @@ export default function App() {
                   ? require("./assets/overcast.png")
                   : dec == "Clear"
                   ? require("./assets/clear.png")
+                  : dec == "Heavy snow"
+                  ? require("./assets/heavysnow.png")
+                  : dec == "Freezing Unknown Precipitation"
+                  ? require("./assets/freezingrain.png")
                   : ""
               }
             />
@@ -92,7 +121,7 @@ export default function App() {
                 {dec == "Sunny"
                   ? "Solig"
                   : dec == "Partly cloudy"
-                  ? "Delvis molnigt"
+                  ? "Delvis \n molnigt"
                   : dec == "Rain"
                   ? "Regnig"
                   : dec == "Light Snow"
@@ -101,13 +130,19 @@ export default function App() {
                   ? "Molnig"
                   : dec == "Clear"
                   ? "Klar"
+                  : dec == "Heavy snow"
+                  ? "Tung \n snö"
+                  : dec == "Freezing Unknown Precipitation"
+                  ? "Frysning \n Okänd \n nederbörd"
                   : ""}
                 {"\n"}
               </Text>
             </Text>
           </View>
         ) : (
-          <Text></Text>
+          <Text numberOfLines={5} style={styles.errorStyle}>
+            {Error}
+          </Text>
         )}
       </View>
       <Text style={styles.myName}>Created by Fadi Hanna</Text>
@@ -154,7 +189,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   info: {
-    margin: 40,
+    margin: 30,
   },
   tempInfo: {
     fontSize: 40,
@@ -165,4 +200,5 @@ const styles = StyleSheet.create({
   decInfo: {
     fontSize: 20,
   },
+  errorStyle: { textAlign: "center", fontSize: 30 },
 });
