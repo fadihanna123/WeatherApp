@@ -25,7 +25,7 @@ export default function App() {
       setLoading(true);
       const { data } = await axios.get(
 <<<<<<< HEAD
-        "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
+        "http://api.weatherstack.com/current?access_key=X&query=" +
           cityinput,
 =======
         "http://api.weatherstack.com/current?access_key=X&query=" +
