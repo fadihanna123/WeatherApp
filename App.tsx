@@ -24,8 +24,13 @@ export default function App() {
     try {
       setLoading(true);
       const { data } = await axios.get(
+<<<<<<< HEAD
         "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
           cityinput,
+=======
+        "http://api.weatherstack.com/current?access_key=X&query=" +
+          city,
+>>>>>>> 500a91c9412f3b79139bfd872e0223612004084d
         {
           method: "GET",
           headers: {
