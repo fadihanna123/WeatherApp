@@ -11,7 +11,7 @@ import {
 import Spinner from "react-native-loading-spinner-overlay";
 import axios from "axios";
 
-export default function App() {
+const App = () => {
   const [temp, setTemp] = useState<string>("");
   const [dec, setDec] = useState<string>("");
   const [cityName, setCityName] = useState<string>("");
@@ -20,7 +20,7 @@ export default function App() {
   const [loading, setLoading] = useState<boolean>(false);
   const [view, setView] = useState<boolean>(false);
 
-  const getWeather = async () => {
+  const getWeather = async (): Promise<void> => {
     try {
       setLoading(true);
       const { data } = await axios.get(
@@ -78,7 +78,7 @@ export default function App() {
             getWeather();
           }}
         />
-        <Button title="Search" onPress={() => getWeather()} />
+        <Button title="Search" color="green" onPress={() => getWeather()} />
       </View>
       <View>
         <Spinner
@@ -108,6 +108,8 @@ export default function App() {
                   ? require("./assets/heavysnow.png")
                   : dec == "Freezing Unknown Precipitation"
                   ? require("./assets/freezingrain.png")
+                  : dec == "Cloudy"
+                  ? require("./assets/cloudy.png")
                   : ""
               }
             />
@@ -134,6 +136,8 @@ export default function App() {
                   ? "Tung \n snö"
                   : dec == "Freezing Unknown Precipitation"
                   ? "Frysning \n Okänd \n nederbörd"
+                  : dec == "Cloudy"
+                  ? "Molnig"
                   : ""}
                 {"\n"}
               </Text>
@@ -148,7 +152,7 @@ export default function App() {
       <Text style={styles.myName}>Created by Fadi Hanna</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -202,3 +206,5 @@ const styles = StyleSheet.create({
   },
   errorStyle: { textAlign: "center", fontSize: 30 },
 });
+
+export default App;
