@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  Image,
-  Button,
-  Text,
-  Alert,
-} from "react-native";
+import { StyleSheet, TextInput, View, Image, Button, Text } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import axios from "axios";
 
