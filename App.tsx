@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, TextInput, View, Image, Button, Text } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Image,
+  Button,
+  Text,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 import axios from "axios";
 
@@ -16,8 +25,7 @@ const App = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        "http://api.weatherstack.com/current?access_key=X&query=" +
-          cityinput,
+        "http://api.weatherstack.com/current?access_key=X&query=" + cityinput,
         {
           method: "GET",
           headers: {
@@ -53,96 +61,98 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.inputbox}>
-        <TextInput
-          defaultValue={cityinput}
-          onChangeText={(cityinput) => setCityInput(cityinput)}
-          style={styles.textinput}
-          placeholder="Search City"
-          onKeyPress={(event) => {
-            if (event.nativeEvent.key == "Enter" && cityinput !== "") {
-              setCityInput("");
-              getWeather();
-            }
-          }}
-          onSubmitEditing={() => {
-            getWeather();
-          }}
-        />
-        <Button title="Search" color="green" onPress={() => getWeather()} />
-      </View>
-      <View>
-        <Spinner
-          visible={loading}
-          textContent={"Loading..."}
-          textStyle={styles.spinnerTextStyle}
-        />
-        {view ? (
-          <View style={styles.contentContainer}>
-            <Image
-              resizeMode="stretch"
-              style={styles.tempImg}
-              source={
-                dec == "sunny"
-                  ? require("./assets/sunny.png")
-                  : dec == "Partly cloudy"
-                  ? require("./assets/partlycloudy.png")
-                  : dec == "Rain"
-                  ? require("./assets/rain.png")
-                  : dec == "Light Snow"
-                  ? require("./assets/snowlight.png")
-                  : dec == "Overcast"
-                  ? require("./assets/overcast.png")
-                  : dec == "Clear"
-                  ? require("./assets/clear.png")
-                  : dec == "Heavy snow"
-                  ? require("./assets/heavysnow.png")
-                  : dec == "Freezing Unknown Precipitation"
-                  ? require("./assets/freezingrain.png")
-                  : dec == "Cloudy"
-                  ? require("./assets/cloudy.png")
-                  : ""
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={styles.container}>
+        <View style={styles.inputbox}>
+          <TextInput
+            defaultValue={cityinput}
+            onChangeText={(cityinput) => setCityInput(cityinput)}
+            style={styles.textinput}
+            placeholder="Search City"
+            onKeyPress={(event) => {
+              if (event.nativeEvent.key == "Enter" && cityinput !== "") {
+                setCityInput("");
+                getWeather();
               }
-            />
-            <Text style={styles.info}>
-              <Text style={styles.cityname}>
-                {cityName} {"\n"}
+            }}
+            onSubmitEditing={() => {
+              getWeather();
+            }}
+          />
+          <Button title="Search" color="green" onPress={() => getWeather()} />
+        </View>
+        <View>
+          <Spinner
+            visible={loading}
+            textContent={"Loading..."}
+            textStyle={styles.spinnerTextStyle}
+          />
+          {view ? (
+            <View style={styles.contentContainer}>
+              <Image
+                resizeMode="stretch"
+                style={styles.tempImg}
+                source={
+                  dec == "sunny"
+                    ? require("./assets/sunny.png")
+                    : dec == "Partly cloudy"
+                    ? require("./assets/partlycloudy.png")
+                    : dec == "Rain"
+                    ? require("./assets/rain.png")
+                    : dec == "Light Snow"
+                    ? require("./assets/snowlight.png")
+                    : dec == "Overcast"
+                    ? require("./assets/overcast.png")
+                    : dec == "Clear"
+                    ? require("./assets/clear.png")
+                    : dec == "Heavy snow"
+                    ? require("./assets/heavysnow.png")
+                    : dec == "Freezing Unknown Precipitation"
+                    ? require("./assets/freezingrain.png")
+                    : dec == "Cloudy"
+                    ? require("./assets/cloudy.png")
+                    : ""
+                }
+              />
+              <Text style={styles.info}>
+                <Text style={styles.cityname}>
+                  {cityName} {"\n"}
+                </Text>
+                <Text style={styles.tempInfo}>{temp}</Text>
+                <Text style={styles.decInfo}>
+                  {"\n"}
+                  {dec == "Sunny"
+                    ? "Solig"
+                    : dec == "Partly cloudy"
+                    ? "Delvis \n molnigt"
+                    : dec == "Rain"
+                    ? "Regnig"
+                    : dec == "Light Snow"
+                    ? "Snö"
+                    : dec == "Overcast"
+                    ? "Molnig"
+                    : dec == "Clear"
+                    ? "Klar"
+                    : dec == "Heavy snow"
+                    ? "Tung \n snö"
+                    : dec == "Freezing Unknown Precipitation"
+                    ? "Frysning \n Okänd \n nederbörd"
+                    : dec == "Cloudy"
+                    ? "Molnig"
+                    : ""}
+                  {"\n"}
+                </Text>
               </Text>
-              <Text style={styles.tempInfo}>{temp}</Text>
-              <Text style={styles.decInfo}>
-                {"\n"}
-                {dec == "Sunny"
-                  ? "Solig"
-                  : dec == "Partly cloudy"
-                  ? "Delvis \n molnigt"
-                  : dec == "Rain"
-                  ? "Regnig"
-                  : dec == "Light Snow"
-                  ? "Snö"
-                  : dec == "Overcast"
-                  ? "Molnig"
-                  : dec == "Clear"
-                  ? "Klar"
-                  : dec == "Heavy snow"
-                  ? "Tung \n snö"
-                  : dec == "Freezing Unknown Precipitation"
-                  ? "Frysning \n Okänd \n nederbörd"
-                  : dec == "Cloudy"
-                  ? "Molnig"
-                  : ""}
-                {"\n"}
-              </Text>
+            </View>
+          ) : (
+            <Text numberOfLines={5} style={styles.errorStyle}>
+              {Error}
             </Text>
-          </View>
-        ) : (
-          <Text numberOfLines={5} style={styles.errorStyle}>
-            {Error}
-          </Text>
-        )}
+          )}
+        </View>
+        <Text style={styles.myName}>Created by Fadi Hanna</Text>
       </View>
-      <Text style={styles.myName}>Created by Fadi Hanna</Text>
-    </View>
+    </TouchableWithoutFeedback>
   );
 };
 
