@@ -25,7 +25,8 @@ const App = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        "http://api.weatherstack.com/current?access_key=X&query=" + cityinput,
+        "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
+          cityinput,
         {
           method: "GET",
           headers: {
@@ -85,7 +86,7 @@ const App = () => {
           <Spinner
             visible={loading}
             textContent={"Loading..."}
-            textStyle={styles.spinnerTextStyle}
+            textStyle={{ color: "#fff" }}
           />
           {view ? (
             <View style={styles.contentContainer}>
@@ -111,6 +112,8 @@ const App = () => {
                     ? require("./assets/freezingrain.png")
                     : dec == "Cloudy"
                     ? require("./assets/cloudy.png")
+                    : dec == "Smoke"
+                    ? require("./assets/smoke.png")
                     : ""
                 }
               />
@@ -139,6 +142,8 @@ const App = () => {
                     ? "Frysning \n Okänd \n nederbörd"
                     : dec == "Cloudy"
                     ? "Molnig"
+                    : dec == "Smoke"
+                    ? "Rök"
                     : ""}
                   {"\n"}
                 </Text>
@@ -169,9 +174,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     width: "100%",
-  },
-  spinnerTextStyle: {
-    color: "#fff",
   },
   icon: {
     width: 100,
