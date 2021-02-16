@@ -12,8 +12,10 @@ import {
 import Spinner from "react-native-loading-spinner-overlay";
 import axios from "axios";
 
+import { WeatherData } from "./typings/List";
+
 const App = () => {
-  const [temp, setTemp] = useState<string>("");
+  const [temp, setTemp] = useState<number>();
   const [dec, setDec] = useState<string>("");
   const [cityName, setCityName] = useState<string>("");
   const [cityinput, setCityInput] = useState<string>("");
@@ -24,7 +26,7 @@ const App = () => {
   const getWeather = async (): Promise<void> => {
     try {
       setLoading(true);
-      const { data } = await axios.get(
+      const { data } = await axios.get<WeatherData>(
         "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
           cityinput,
         {
@@ -66,6 +68,7 @@ const App = () => {
       <View style={styles.container}>
         <View style={styles.inputbox}>
           <TextInput
+            clearButtonMode="always"
             defaultValue={cityinput}
             onChangeText={(cityinput) => setCityInput(cityinput)}
             style={styles.textinput}
@@ -112,9 +115,7 @@ const App = () => {
                     ? require("./assets/freezingrain.png")
                     : dec == "Cloudy"
                     ? require("./assets/cloudy.png")
-                    : dec == "Smoke"
-                    ? require("./assets/smoke.png")
-                    : ""
+                    : { uri: null }
                 }
               />
               <Text style={styles.info}>
