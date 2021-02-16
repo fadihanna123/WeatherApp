@@ -26,9 +26,8 @@ const App = () => {
   const getWeather = async (): Promise<void> => {
     try {
       setLoading(true);
-      const { data } = await axios.get<WeatherData>(
-        "http://api.weatherstack.com/current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" +
-          cityinput,
+      const { data } = await axios.get(
+        "http://api.weatherstack.com/current?access_key=X&query=" + cityinput,
         {
           method: "GET",
           headers: {
