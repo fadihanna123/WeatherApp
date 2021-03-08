@@ -20,9 +20,9 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
     "react-native-gesture-handler": "~1.10.3",
     "react-native-loading-spinner-overlay": "^2.0.0",
-    "react-native-reanimated": "~1.13.0",
-    "react-native-safe-area-context": "3.1.9",
-    "react-native-screens": "~2.18.0",
+    "react-native-reanimated": "~2.0.0",
+    "react-native-safe-area-context": "3.2.0",
+    "react-native-screens": "~2.18.1",
     "react-native-web": "~0.15.0",
     "react-navigation": "^4.4.4",
     "react-uid": "^2.3.1"
@@ -30,11 +30,11 @@
   "devDependencies": {
     "@babel/core": "~7.13.8",
     "@types/axios": "^0.14.0",
-    "@types/react": "~17.0.2",
+    "@types/react": "~17.0.3",
     "@types/react-dom": "~17.0.1",
-    "@types/react-native": "~0.63.50",
+    "@types/react-native": "~0.63.51",
     "@types/react-native-loading-spinner-overlay": "^0.5.2",
-    "typescript": "~4.2.2"
+    "typescript": "~4.2.3"
   },
   "private": true
 }
