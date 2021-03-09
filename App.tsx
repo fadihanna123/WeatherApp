@@ -25,34 +25,19 @@ const App = () => {
         <FormBox
           cityinput={cityinput}
           setCityInput={setCityInput}
-          loading={loading}
           setLoading={setLoading}
-          view={view}
           setView={setView}
-          dec={dec}
           setDec={setDec}
-          cityName={cityName}
           setCityName={setCityName}
-          temp={temp as number}
           setTemp={setTemp}
-          Error={Error}
-          setError={setError}
         />
         <WeatherData
-          cityinput={cityinput}
-          setCityInput={setCityInput}
           loading={loading}
-          setLoading={setLoading}
           view={view}
-          setView={setView}
           dec={dec}
-          setDec={setDec}
           cityName={cityName}
-          setCityName={setCityName}
           temp={temp}
-          setTemp={setTemp}
           Error={Error}
-          setError={setError}
         />
         <NameBox />
       </View>
