@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
-  View,
-  TouchableWithoutFeedback,
   Keyboard,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
 } from "react-native";
 
-import FormBox from "./components/WeatherForm";
-import WeatherData from "./components/WeatherData";
 import NameBox from "./components/NameBox";
+import WeatherData from "./components/WeatherData";
+import FormBox from "./components/WeatherForm";
 
 const App = () => {
   const [temp, setTemp] = useState<number>();

@@ -1,7 +1,7 @@
-import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
 import axios from "axios";
+import PropTypes from "prop-types";
+import React from "react";
+import { Button, StyleSheet, TextInput, View } from "react-native";
 
 import { Props } from "../typings/List";
 
@@ -17,7 +17,7 @@ const WeatherForm = ({
 }: Props) => {
   const getWeather = async (): Promise<void> => {
     try {
-      setLoading(true);
+      setLoading && setLoading(true);
       const { data } = await axios.get(
         "http://api.weatherstack.com/current?access_key=X&query=" + cityinput,
         {
@@ -28,29 +28,29 @@ const WeatherForm = ({
       );
       if (!cityinput) {
         data.current.temperature && "Done";
-        setView(false);
-        setError("Start typing first...");
+        setView && setView(false);
+        setError && setError("Start typing first...");
       } else {
         if (
           data.current.temperature &&
           data.location.name &&
           data.current.weather_descriptions[0]
         ) {
-          setView(true);
-          setTemp(data.current.temperature);
-          setCityName(data.location.name);
-          setDec(data.current.weather_descriptions[0]);
+          setView && setView(true);
+          setTemp && setTemp(data.current.temperature);
+          setCityName && setCityName(data.location.name);
+          setDec && setDec(data.current.weather_descriptions[0]);
         }
         if (!cityinput) {
-          setView(false);
-          setError("Start typing first...");
+          setView && setView(false);
+          setError && setError("Start typing first...");
         }
       }
     } catch (err) {
       console.log(err.message);
-      setError("There is no such city in the world....");
+      setError && setError("There is no such city in the world....");
     } finally {
-      setLoading(false);
+      setLoading && setLoading(false);
     }
   };
 
@@ -60,12 +60,12 @@ const WeatherForm = ({
         <TextInput
           clearButtonMode="always"
           defaultValue={cityinput}
-          onChangeText={(cityinput) => setCityInput(cityinput)}
+          onChangeText={(cityinput) => setCityInput && setCityInput(cityinput)}
           style={styles.textinput}
           placeholder="Search City"
           onKeyPress={(event) => {
             if (event.nativeEvent.key == "Enter" && cityinput !== "") {
-              setCityInput("");
+              setCityInput && setCityInput("");
               getWeather();
             }
           }}

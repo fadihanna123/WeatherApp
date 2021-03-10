@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
 import PropTypes from "prop-types";
+import React from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import Spinner from "react-native-loading-spinner-overlay";
 
 import { Props } from "../typings/List";
 
@@ -26,7 +26,7 @@ const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
                   ? require("../assets/partlycloudy.png")
                   : dec == "Rain"
                   ? require("../assets/rain.png")
-                  : dec == "Light Snow"
+                  : dec == "Light snow"
                   ? require("../assets/snowlight.png")
                   : dec == "Overcast"
                   ? require("../assets/overcast.png")
@@ -57,8 +57,8 @@ const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
                   ? "Delvis \n molnigt"
                   : dec == "Rain"
                   ? "Regnig"
-                  : dec == "Light Snow"
-                  ? "Snö"
+                  : dec == "Light snow"
+                  ? "Lätt snö"
                   : dec == "Overcast"
                   ? "Molnig"
                   : dec == "Clear"
