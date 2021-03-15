@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Button, StyleSheet, TextInput, View } from "react-native";
 
-import { Props } from "../typings/List";
+import { Props } from "../typings";
 
 const WeatherForm = ({
   cityinput,

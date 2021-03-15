@@ -3,7 +3,7 @@ import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 
-import { Props } from "../typings/List";
+import { Props } from "../typings";
 
 const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
   return (
