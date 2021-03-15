@@ -28,7 +28,7 @@ components/NameBox.tsx <br />
 components/WeatherData.tsx <br />
 components/WeatherForm.tsx <br />
 typings/ <br />
-typings/List.ts <br />
+typings/index.ts <br />
 .gitignore <br />
 app.json <br />
 App.tsx <br />
