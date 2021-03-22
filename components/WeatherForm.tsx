@@ -20,7 +20,7 @@ const WeatherForm = ({
       setLoading && setLoading(true);
 
       const { data } = await axios.get(
-        "current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" + cityinput
+        "current?access_key=X&query=" + cityinput
       );
       if (!cityinput) {
         data.current.temperature && "Done";
