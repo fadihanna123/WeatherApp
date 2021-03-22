@@ -18,13 +18,9 @@ const WeatherForm = ({
   const getWeather = async (): Promise<void> => {
     try {
       setLoading && setLoading(true);
+
       const { data } = await axios.get(
-        "http://api.weatherstack.com/current?access_key=X&query=" + cityinput,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        "current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" + cityinput
       );
       if (!cityinput) {
         data.current.temperature && "Done";
@@ -47,7 +43,6 @@ const WeatherForm = ({
         }
       }
     } catch (err) {
-      console.log(err.message);
       setError && setError("There is no such city in the world....");
     } finally {
       setLoading && setLoading(false);

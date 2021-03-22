@@ -20,7 +20,7 @@ const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
               resizeMode="stretch"
               style={styles.tempImg}
               source={
-                dec == "sunny"
+                dec == "Sunny"
                   ? require("../assets/sunny.png")
                   : dec == "Partly cloudy"
                   ? require("../assets/partlycloudy.png")

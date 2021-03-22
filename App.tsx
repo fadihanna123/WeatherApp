@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import {
   Keyboard,
@@ -9,6 +10,9 @@ import {
 import NameBox from "./components/NameBox";
 import WeatherData from "./components/WeatherData";
 import FormBox from "./components/WeatherForm";
+
+axios.defaults.baseURL = "http://api.weatherstack.com/";
+axios.defaults.headers["Content-Type"] = "application/json";
 
 const App = () => {
   const [temp, setTemp] = useState<number>();
