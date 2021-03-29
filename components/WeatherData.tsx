@@ -40,13 +40,14 @@ const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
                   ? require("../assets/cloudy.png")
                   : dec == "Mist"
                   ? require("../assets/mist.png")
+                  : dec == "Light rain shower"
+                  ? require("../assets/light_rain_shower.png")
                   : { uri: null }
               }
             />
             <Text style={styles.info}>
               <Text style={styles.cityname}>
-                {cityName}
-                {"\n"}
+                {cityName} {"\n"}
               </Text>
               <Text style={styles.tempInfo}>{temp}</Text>
               <Text style={styles.decInfo}>
@@ -73,6 +74,8 @@ const WeatherData = ({ loading, view, dec, cityName, temp, Error }: Props) => {
                   ? "Rök"
                   : dec == "Mist"
                   ? "Dimma"
+                  : "Light rain shower"
+                  ? "Lätt regnskur"
                   : ""}
                 {"\n"}
               </Text>
@@ -119,7 +122,7 @@ const styles = StyleSheet.create({
     margin: 30,
   },
   cityname: {
-    fontSize: 20,
+    fontSize: 18,
   },
   tempInfo: {
     fontSize: 40,
