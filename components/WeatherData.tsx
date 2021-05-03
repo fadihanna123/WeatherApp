@@ -96,6 +96,8 @@ WeatherData.propTypes = {
   view: PropTypes.bool.isRequired,
   dec: PropTypes.string.isRequired,
   temp: PropTypes.number.isRequired,
+  cityName: PropTypes.string.isRequired,
+  Error: PropTypes.string.isRequired,
 };
 
 WeatherData.defaultProps = {
@@ -103,6 +105,8 @@ WeatherData.defaultProps = {
   view: false,
   dec: "",
   temp: 0,
+  cityName: "",
+  Error: "",
 };
 
 export default WeatherData;
