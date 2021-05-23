@@ -23,9 +23,9 @@
     "react-uid": "^2.3.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.14.2",
+    "@babel/core": "~7.14.3",
     "@types/axios": "^0.14.0",
-    "@types/react": "~17.0.5",
+    "@types/react": "~17.0.6",
     "@types/react-dom": "~17.0.5",
     "@types/react-native": "~0.64.5",
     "@types/react-native-loading-spinner-overlay": "^0.5.2",
