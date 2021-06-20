@@ -19,30 +19,34 @@ const App = () => {
   const [dec, setDec] = useState<string>("");
   const [cityName, setCityName] = useState<string>("");
   const [cityinput, setCityInput] = useState<string>("");
-  const [Error, setError] = useState<string>("");
+  const [Error] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [view, setView] = useState<boolean>(false);
+
+  const formBoxProps = {
+    cityinput: cityinput,
+    setCityInput: setCityInput,
+    setLoading: setLoading,
+    setView: setView,
+    setDec: setDec,
+    setCityName: setCityName,
+    setTemp: setTemp,
+  };
+
+  const weatherDataProps = {
+    loading: loading,
+    view: view,
+    dec: dec,
+    cityName: cityName,
+    temp: temp,
+    Error: Error,
+  };
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-        <FormBox
-          cityinput={cityinput}
-          setCityInput={setCityInput}
-          setLoading={setLoading}
-          setView={setView}
-          setDec={setDec}
-          setCityName={setCityName}
-          setTemp={setTemp}
-        />
-        <WeatherData
-          loading={loading}
-          view={view}
-          dec={dec}
-          cityName={cityName}
-          temp={temp}
-          Error={Error}
-        />
+        <FormBox {...formBoxProps} />
+        <WeatherData {...weatherDataProps} />
         <NameBox />
       </View>
     </TouchableWithoutFeedback>
