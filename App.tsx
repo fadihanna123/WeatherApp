@@ -1,15 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
-import {
-  Keyboard,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import { Keyboard, TouchableWithoutFeedback, View } from "react-native";
 
 import NameBox from "./components/NameBox";
 import WeatherData from "./components/WeatherData";
 import FormBox from "./components/WeatherForm";
+import { styles } from "./styles/AppStyles";
 
 axios.defaults.baseURL = "http://api.weatherstack.com/";
 axios.defaults.headers["Content-Type"] = "application/json";
@@ -54,10 +50,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    margin: 50,
-  },
-});

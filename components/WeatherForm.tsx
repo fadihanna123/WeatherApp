@@ -1,9 +1,10 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import React from "react";
-import { Button, StyleSheet, TextInput, View } from "react-native";
+import { Button, TextInput, View } from "react-native";
 import { debounce } from "ts-debounce";
 
+import { styles } from "../styles/WeatherFormStyles";
 import { Props } from "../typings";
 
 const WeatherForm = ({
@@ -45,7 +46,7 @@ const WeatherForm = ({
       setLoading && setLoading(true);
 
       const { data } = await axios.get(
-        "current?access_key=z&query=" + cityinput
+        "current?access_key=4002299c4024aaf87b643da6a693e1f2&query=" + cityinput
       );
 
       checkIfNoInput(data);
@@ -57,27 +58,25 @@ const WeatherForm = ({
   };
 
   return (
-    <>
-      <View style={styles.inputbox}>
-        <TextInput
-          clearButtonMode="always"
-          defaultValue={cityinput}
-          onChangeText={(cityinput) => setCityInput && setCityInput(cityinput)}
-          style={styles.textinput}
-          placeholder="Search City"
-          onKeyPress={(event) => {
-            if (event.nativeEvent.key == "Enter" && cityinput !== "") {
-              setCityInput && setCityInput("");
-              getWeather();
-            }
-          }}
-          onSubmitEditing={() => {
-            debounce<any>(getWeather(), 1500);
-          }}
-        />
-        <Button title="Search" color="green" onPress={() => getWeather()} />
-      </View>
-    </>
+    <View style={styles.inputbox}>
+      <TextInput
+        clearButtonMode="always"
+        defaultValue={cityinput}
+        onChangeText={(cityinput) => setCityInput && setCityInput(cityinput)}
+        style={styles.textinput}
+        placeholder="Search City"
+        onKeyPress={(event) => {
+          if (event.nativeEvent.key == "Enter" && cityinput !== "") {
+            setCityInput && setCityInput("");
+            getWeather();
+          }
+        }}
+        onSubmitEditing={() => {
+          debounce<any>(getWeather(), 1500);
+        }}
+      />
+      <Button title="Search" color="green" onPress={() => getWeather()} />
+    </View>
   );
 };
 
@@ -92,15 +91,3 @@ WeatherForm.defaultProps = {
 };
 
 export default WeatherForm;
-
-const styles = StyleSheet.create({
-  inputbox: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-  textinput: {
-    borderWidth: 1,
-    padding: 10,
-    width: "100%",
-  },
-});
