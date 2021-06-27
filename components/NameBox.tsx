@@ -2,11 +2,7 @@ import React from "react";
 import { StyleSheet, Text } from "react-native";
 
 const NameBox = () => {
-  return (
-    <>
-      <Text style={styles.myName}>Created by Fadi Hanna</Text>
-    </>
-  );
+  return <Text style={styles.myName}>Created by Fadi Hanna</Text>;
 };
 
 const styles = StyleSheet.create({
