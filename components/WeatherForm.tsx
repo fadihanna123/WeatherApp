@@ -5,9 +5,9 @@ import { Button, TextInput, View } from "react-native";
 import { debounce } from "ts-debounce";
 
 import { styles } from "../styles/WeatherFormStyles";
-import { Props } from "../typings";
+import { Props, WeatherData } from "../typings";
 
-const WeatherForm = ({
+const WeatherForm: React.FC<Props> = ({
   cityinput,
   setCityInput,
   setLoading,
@@ -17,7 +17,7 @@ const WeatherForm = ({
   setCityName,
   setDec,
 }: Props) => {
-  const checkIfNoInput = (data: any) => {
+  const checkIfNoInput = (data: WeatherData) => {
     if (!cityinput) {
       data.current.temperature && "Done";
 
@@ -45,8 +45,8 @@ const WeatherForm = ({
     try {
       setLoading && setLoading(true);
 
-      const { data } = await axios.get(
-        "current?access_key=x&query=" + cityinput
+      const { data } = await axios.get<WeatherData>(
+        "current?access_key=X&query=" + cityinput
       );
 
       checkIfNoInput(data);
@@ -87,7 +87,6 @@ WeatherForm.propTypes = {
 
 WeatherForm.defaultProps = {
   cityinput: "",
-  setCityInput: "",
 };
 
 export default WeatherForm;

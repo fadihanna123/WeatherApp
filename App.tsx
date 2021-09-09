@@ -10,7 +10,7 @@ import { styles } from "./styles/AppStyles";
 axios.defaults.baseURL = "http://api.weatherstack.com/";
 axios.defaults.headers["Content-Type"] = "application/json";
 
-const App = () => {
+const App: React.FC = () => {
   const [temp, setTemp] = useState<number>();
   const [dec, setDec] = useState<string>("");
   const [cityName, setCityName] = useState<string>("");
