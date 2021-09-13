@@ -37,6 +37,8 @@ const WeatherForm: React.FC<Props> = ({
         setCityName && setCityName(data.location.name);
 
         setDec && setDec(data.current.weather_descriptions[0]);
+
+        setCityInput!("");
       }
     }
   };
@@ -65,7 +67,7 @@ const WeatherForm: React.FC<Props> = ({
         onChangeText={(cityinput) => setCityInput && setCityInput(cityinput)}
         style={styles.textinput}
         placeholder="Search City"
-        onKeyPress={(event) => {
+        onKeyPress={(event): void => {
           if (event.nativeEvent.key == "Enter" && cityinput !== "") {
             setCityInput && setCityInput("");
             getWeather();
