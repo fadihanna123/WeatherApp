@@ -23,6 +23,9 @@ assets/smoke.png <br />
 assets/snowlight.png <br />
 assets/splash.png <br />
 assets/sunny.png <br />
+app/ <br />
+app/Layout.tsx <br />
+app/index.ts <br />
 components/ <br />
 components/NameBox.tsx <br />
 components/WeatherData.tsx <br />
