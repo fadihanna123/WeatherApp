@@ -18,6 +18,7 @@ const WeatherData: React.FC<Props> = ({
       visible={loading}
       textContent={"Loading..."}
       textStyle={{ color: "#fff" }}
+      animation="fade"
     />
     {view ? (
       <View style={styles.contentContainer}>
