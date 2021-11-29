@@ -1,26 +1,33 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
-const request = async (
-  url: string,
-  method?: any,
-  sent?: any,
-  headers?: {}
-): Promise<any> => {
-  let data: AxiosResponse<any> | undefined;
+const request: {
+  get: Function;
+  post: Function;
+  put: Function;
+  delete: Function;
+} = {
+  get: async (url: string): Promise<void> => {
+    const { data } = await axios.get(url);
+    return data;
+  },
 
-  if (method === "get") {
-    data = await axios.get(url, headers);
-  } else if (method === "post") {
-    data = await axios.post(url, sent, headers);
-  } else if (method === "put") {
-    data = await axios.put(url, sent, headers);
-  } else if (method === "delete") {
-    data = await axios.delete(url, headers);
-  } else {
-    data = await axios.get(url);
-  }
+  post: async (
+    url: string,
+    redata: any,
+    headers?: { headers: {} }
+  ): Promise<void> => {
+    const { data } = await axios.post(url, redata, headers);
+    return data;
+  },
 
-  return data!.data;
+  put: async (
+    url: string,
+    data: any,
+    headers?: { headers: {} }
+  ): Promise<void> => await axios.put(url, data, headers),
+
+  delete: async (url: string, headers?: { headers: {} }): Promise<void> =>
+    await axios.delete(url, headers),
 };
 
 export { request };

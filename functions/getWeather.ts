@@ -15,10 +15,11 @@ const getWeather = async (
   try {
     setLoading && setLoading(true);
 
-    const endPoint: string = `current?access_key=X&query=${cityinput}`;
-    ("get");
+    const endPoint: string = `current?access_key=${
+      process && process.env.KEY
+    }&query=${cityinput}`;
 
-    const data: WeatherData = await request(endPoint);
+    const data: WeatherData = await request.get(endPoint);
 
     checkIfNoInput(
       data,
