@@ -32,6 +32,8 @@ components/WeatherData.tsx <br />
 components/WeatherForm.tsx <br />
 typings/ <br />
 typings/index.ts <br />
+.env <br />
+.env.example <br />
 .gitignore <br />
 app.json <br />
 App.tsx <br />
