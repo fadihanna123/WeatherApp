@@ -1,4 +1,4 @@
-import { WeatherData } from "../typings";
+import { WeatherData } from '../models';
 
 const checkIfNoInput = (
   data: WeatherData,

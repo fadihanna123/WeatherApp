@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Button, TextInput, View } from "react-native";
-import { debounce } from "ts-debounce";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Button, TextInput, View } from 'react-native';
+import { debounce } from 'ts-debounce';
 
-import { getWeather } from "../functions";
-import { styles } from "../styles/WeatherFormStyles";
-import { Props } from "../typings";
+import { getWeather } from '../functions';
+import { Props } from '../models';
+import { styles } from '../styles/WeatherFormStyles';
 
 const WeatherForm: React.FC<Props> = ({
   cityinput,
@@ -41,7 +41,7 @@ const WeatherForm: React.FC<Props> = ({
         }
       }}
       onSubmitEditing={() => {
-        debounce<any>(
+        debounce(
           getWeather(
             setLoading,
             cityinput,
@@ -51,7 +51,7 @@ const WeatherForm: React.FC<Props> = ({
             setCityName,
             setDec,
             setCityInput
-          ),
+          ) as any,
           1500
         );
       }}
