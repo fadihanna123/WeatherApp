@@ -1,6 +1,5 @@
-import { request } from "../api";
-import { WeatherData } from "../typings";
-import { checkIfNoInput } from "./checkIfNoInput";
+import { getData } from './apiHandler';
+import { checkIfNoInput } from './checkIfNoInput';
 
 const getWeather = async (
   setLoading: ((loading: boolean) => void) | undefined,
@@ -15,11 +14,7 @@ const getWeather = async (
   try {
     setLoading && setLoading(true);
 
-    const endPoint: string = `current?access_key=${
-      process && process.env.KEY
-    }&query=${cityinput}`;
-
-    const data: WeatherData = await request.get(endPoint);
+    const data = await getData(cityinput);
 
     checkIfNoInput(
       data,

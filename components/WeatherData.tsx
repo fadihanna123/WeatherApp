@@ -1,9 +1,10 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { Image, Text, View } from "react-native";
-import Spinner from "react-native-loading-spinner-overlay";
-import { styles } from "../styles";
-import { Props } from "../typings";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
+
+import { Props } from '../models';
+import { styles } from '../styles';
 
 const WeatherData: React.FC<Props> = ({
   loading,
