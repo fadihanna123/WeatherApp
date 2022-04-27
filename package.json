@@ -21,7 +21,7 @@
     "react-dom": "18.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-44.0.0.tar.gz",
     "react-native-dotenv": "^3.3.1",
-    "react-native-gesture-handler": "~2.4.0",
+    "react-native-gesture-handler": "~2.4.1",
     "react-native-loading-spinner-overlay": "^3.0.0",
     "react-native-reanimated": "~2.8.0",
     "react-native-safe-area-context": "4.2.4",
