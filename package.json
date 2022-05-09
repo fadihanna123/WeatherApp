@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "babel-plugin-inline-dotenv": "^1.7.0",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "babel-preset-react-native": "^4.0.1",
     "expo": "~44.0.6",
     "expo-status-bar": "~1.2.0",
