@@ -3,7 +3,8 @@
 WeatherApp är en mobilapp som visar dagens väder beroende på den valda staden. <br />
 
 ### 1.1 Mappstruktur
-
+.github/ <br />
+.github/dependabot.yml <br />
 .expo-shared/ <br />
 .expo-shared/assets.json <br />
 .expo-shared/README.md <br />
