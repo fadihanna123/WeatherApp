@@ -1,88 +1,52 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Button, TextInput, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from 'ts-debounce';
 
 import { getWeather } from '../functions';
-import { Props } from '../models';
-import { styles } from '../styles/WeatherFormStyles';
+import { CityInputReducerTypes } from '../models';
+import { setCityInput } from '../redux/actions';
+import { weatherFormStyles } from '../styles';
 
-const WeatherForm: React.FC<Props> = ({
-  cityinput,
-  setCityInput,
-  setLoading,
-  setView,
-  setError,
-  setTemp,
-  setCityName,
-  setDec,
-}: Props) => (
-  <View style={styles.inputbox}>
-    <TextInput
-      clearButtonMode="always"
-      defaultValue={cityinput}
-      onChangeText={(cityinput) => setCityInput && setCityInput(cityinput)}
-      style={styles.textinput}
-      placeholder="Search City"
-      onKeyPress={(event): void => {
-        if (event.nativeEvent.key == "Enter" && cityinput !== "") {
-          setCityInput && setCityInput("");
+const WeatherForm: React.FC = () => {
+  const cityInput = useSelector(
+    (state: CityInputReducerTypes) => state.cityInputReducer
+  );
 
-          getWeather(
-            setLoading,
-            cityinput,
-            setView,
-            setError,
-            setTemp,
-            setCityName,
-            setDec,
-            setCityInput
-          );
+  const dispatch = useDispatch();
+
+  return (
+    <View style={weatherFormStyles.inputbox}>
+      <TextInput
+        clearButtonMode='always'
+        defaultValue={cityInput}
+        onChangeText={(cityinput) =>
+          dispatch(setCityInput(cityinput))
         }
-      }}
-      onSubmitEditing={() => {
-        debounce(
-          getWeather(
-            setLoading,
-            cityinput,
-            setView,
-            setError,
-            setTemp,
-            setCityName,
-            setDec,
+        style={weatherFormStyles.textinput}
+        placeholder='Search City'
+        onKeyPress={(event): void => {
+          if (
+            event.nativeEvent.key === 'Enter' &&
+            cityInput !== '' &&
             setCityInput
-          ) as any,
-          1500
-        );
-      }}
-    />
-    <Button
-      title="Search"
-      color="green"
-      onPress={() =>
-        cityinput &&
-        getWeather(
-          setLoading,
-          cityinput,
-          setView,
-          setError,
-          setTemp,
-          setCityName,
-          setDec,
-          setCityInput
-        )
-      }
-    />
-  </View>
-);
+          ) {
+            setCityInput('');
 
-WeatherForm.propTypes = {
-  cityinput: PropTypes.string.isRequired,
-  setCityInput: PropTypes.func.isRequired,
-};
-
-WeatherForm.defaultProps = {
-  cityinput: "",
+            getWeather(dispatch, cityInput);
+          }
+        }}
+        onSubmitEditing={() => {
+          debounce(getWeather(dispatch, cityInput) as any, 1500);
+        }}
+      />
+      <Button
+        title='Search'
+        color='green'
+        onPress={() => cityInput && getWeather(dispatch, cityInput)}
+      />
+    </View>
+  );
 };
 
 export default WeatherForm;

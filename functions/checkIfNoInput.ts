@@ -1,38 +1,34 @@
+import { Dispatch } from 'redux';
+
 import { WeatherData } from '../models';
+import { setCityInput, setCityName, setDec, setError, setTemp, setViewSearchBox } from '../redux/actions';
 
-const checkIfNoInput = (
+export const checkIfNoInput = (
+  dispatch: Dispatch<any>,
   data: WeatherData,
-  cityinput: string | undefined,
-  setView: ((view: boolean) => void) | undefined,
-  setError: ((error: string) => void) | undefined,
-  setTemp: ((temp: number) => void) | undefined,
-  setCityName: ((cityName: string) => void) | undefined,
-  setDec: ((dec: string) => void) | undefined,
-  setCityInput: ((cityinput: string) => void) | undefined
+  cityInput: string | undefined
 ): void => {
-  if (!cityinput) {
-    data.current.temperature && "Done";
+  if (!cityInput) {
+    dispatch(setViewSearchBox(true));
 
-    setView && setView(false);
-
-    setError && setError("Start typing first...");
+    dispatch(setError('Start typing first...'));
   } else {
     if (
       data.current.temperature &&
       data.location.name &&
       data.current.weather_descriptions[0]
     ) {
-      setView && setView(true);
+      if (setViewSearchBox) {
+        setViewSearchBox(true);
+      }
 
-      setTemp && setTemp(data.current.temperature);
+      dispatch(setTemp(data.current.temperature));
 
-      setCityName && setCityName(data.location.name);
+      dispatch(setCityName(data.location.name));
 
-      setDec && setDec(data.current.weather_descriptions[0]);
+      dispatch(setDec(data.current.weather_descriptions[0]));
 
-      setCityInput!("");
+      dispatch(setCityInput?.(''));
     }
   }
 };
-
-export { checkIfNoInput };

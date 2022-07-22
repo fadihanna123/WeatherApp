@@ -1,14 +1,14 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const weatherDataStyles = StyleSheet.create({
   contentContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
   tempImg: {
-    justifyContent: "center",
-    width: "50%",
-    height: "100%",
+    justifyContent: 'center',
+    width: '50%',
+    height: '100%',
     margin: 10,
   },
   info: {
@@ -23,5 +23,5 @@ export const styles = StyleSheet.create({
   decInfo: {
     fontSize: 20,
   },
-  errorStyle: { textAlign: "center", fontSize: 30 },
+  errorStyle: { textAlign: 'center', fontSize: 30 },
 });

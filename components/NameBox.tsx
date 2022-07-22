@@ -1,17 +1,10 @@
-import React from "react";
-import { StyleSheet, Text } from "react-native";
+import React from 'react';
+import { Text } from 'react-native';
+
+import { nameBoxStyles } from '../styles';
 
 const NameBox: React.FC = () => (
-  <Text style={styles.myName}>Created by Fadi Hanna</Text>
+  <Text style={nameBoxStyles.myName}>Created by Fadi Hanna</Text>
 );
-
-const styles = StyleSheet.create({
-  myName: {
-    textAlign: "center",
-    marginTop: 100,
-    marginRight: 20,
-    fontSize: 20,
-  },
-});
 
 export default NameBox;
