@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    '@typescript-eslint/naming-convention': 'error',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
       'error',
