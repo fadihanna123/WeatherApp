@@ -1,7 +1,7 @@
-module.exports = function (api) {
+export default (api) => {
   api.cache(true);
   return {
-    presets: ["babel-preset-expo"],
-    plugins: ["inline-dotenv"],
+    presets: ['babel-preset-expo'],
+    plugins: ['inline-dotenv'],
   };
 };

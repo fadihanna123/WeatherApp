@@ -3,5 +3,6 @@
 
 pnpm i
 yarn manypkg check
+eslint .
 npx pretty-quick --staged
 rimraf node_modules

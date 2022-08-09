@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const request = {
   get: async (url: string): Promise<void> => {
@@ -21,6 +21,8 @@ export const request = {
     headers?: { headers: Record<string, string> }
   ): Promise<void> => await axios.put(url, data, headers),
 
-  delete: async (url: string, headers?: { headers: Record<string, string> }): Promise<void> =>
-    await axios.delete(url, headers),
+  delete: async (
+    url: string,
+    headers?: { headers: Record<string, string> }
+  ): Promise<void> => await axios.delete(url, headers),
 };
