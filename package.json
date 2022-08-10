@@ -64,5 +64,10 @@
     "redux-thunk": "^2.4.1",
     "ts-debounce": "^4.0.0",
     "typescript": "~4.7.4"
+  },
+  "engines": {
+    "node": ">=14.12.0",
+    "npm": "Please use pnpm instead of NPM to install dependencies",
+    "yarn": "Please use pnpm instead of Yarn to install dependencies"
   }
 }
