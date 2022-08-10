@@ -4,6 +4,11 @@
   "license": "MIT",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
+  "bugs": "https://github.com/fadihanna123/WeatherApp/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadihanna123/WeatherApp"
+  },
   "lastUgrade": "20220801",
   "scripts": {
     "start": "expo start",

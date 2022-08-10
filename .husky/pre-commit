@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm i
-yarn manypkg check
+pnpm manypkg check
 eslint .
 npx pretty-quick --staged
-rimraf node_modules
+rimraf node_modules .expo
