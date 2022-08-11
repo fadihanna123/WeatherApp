@@ -1,4 +1,8 @@
-import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
+import {
+  Keyboard,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { ViewSearchBoxReducerTypes } from '../models';

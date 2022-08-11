@@ -1,7 +1,14 @@
 import { Dispatch } from 'redux';
 
 import { WeatherData } from '../models';
-import { setCityInput, setCityName, setDec, setError, setTemp, setViewSearchBox } from '../redux/actions';
+import {
+  setCityInput,
+  setCityName,
+  setDec,
+  setError,
+  setTemp,
+  setViewSearchBox,
+} from '../redux/actions';
 
 export const checkIfNoInput = (
   dispatch: Dispatch<any>,

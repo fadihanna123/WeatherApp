@@ -2,7 +2,12 @@ import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
-import { CityNameReducerTypes, DecReducerTypes, TempReducerTypes, ViewSearchBoxReducerTypes } from '../models';
+import {
+  CityNameReducerTypes,
+  DecReducerTypes,
+  TempReducerTypes,
+  ViewSearchBoxReducerTypes,
+} from '../models';
 import { weatherDataStyles } from '../styles';
 
 const WeatherData: React.FC = () => {
