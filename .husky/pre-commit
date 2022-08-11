@@ -4,6 +4,6 @@
 pnpm i
 pnpm manypkg check
 eslint .
+eclint fix
 npx pretty-quick --staged
 rimraf node_modules .expo
-eclint fix
