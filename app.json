@@ -26,6 +26,8 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
-  }
+    "description": "",
+    "sdkVersion": "45.0.0"
+  },
+  "name": "weather_app"
 }
