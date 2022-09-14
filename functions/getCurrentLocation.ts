@@ -13,6 +13,18 @@ import {
 } from '../redux/actions';
 import { getData } from './apiHandler';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Get current location from user.
+ *
+ * @param dispatch - Dispatch
+ * @param viewCurrent - Boolean
+ * @returns Promise
+ */
+
 export const getCurrentLocation = async (
   dispatch: Dispatch<any>,
   viewCurrent: boolean
@@ -22,8 +34,7 @@ export const getCurrentLocation = async (
 
     dispatch(setCurrentLoading(true));
 
-    const { status } =
-      await Location.requestForegroundPermissionsAsync();
+    const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== 'granted') {
       return;
     }

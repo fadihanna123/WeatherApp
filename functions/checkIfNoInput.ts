@@ -10,6 +10,19 @@ import {
   setViewSearchBox,
 } from '../redux/actions';
 
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Check if no value exists in text field.
+ *
+ * @param dispatch - Dispatch
+ * @param data - Weatherdata object
+ * @param cityInput - City value.
+ * @returns Void
+ */
+
 export const checkIfNoInput = (
   dispatch: Dispatch<any>,
   data: WeatherData,
