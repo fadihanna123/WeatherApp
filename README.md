@@ -1,9 +1,7 @@
 ## 1. WeatherApp
+WeatherApp is a mobile app that shows today's weather depending on the selected city. <br />
 
-WeatherApp är en mobilapp som visar dagens väder beroende på den valda staden. <br />
-
-### 1.1 Mappstruktur
-
+### 1.1 Folder Structure
 .github/ <br />
 .github/dependabot.yml <br />
 .expo-shared/ <br />
@@ -45,10 +43,8 @@ README.md <br />
 tsconfig.json <br />
 yarn.lock <br />
 
-### 1.3 Programmeringsspråk som används i projektet:
+### 1.3 Programming languages ​​used in the project:
+Typescript and Javascript. <br />
 
-Typescript och Javascript. <br />
-
-### 1.4 Ramverk/bibliotek:
-
-React, React Native, Expo, JSON och SASS. <br />
+### 1.4 Framework/Library:
+React, React Native, Expo, JSON and SASS. <br />
