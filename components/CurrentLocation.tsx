@@ -82,9 +82,7 @@ const CurrentLocation: React.FC = () => {
           <Text style={weatherDataStyles.cityname}>
             {CurrentLoc} {'\n'}
           </Text>
-          <Text style={weatherDataStyles.tempInfo}>
-            {currentTemp}
-          </Text>
+          <Text style={weatherDataStyles.tempInfo}>{currentTemp}</Text>
           <Text style={weatherDataStyles.decInfo}>
             {'\n'}
             {currentDec === 'Sunny'

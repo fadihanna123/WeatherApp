@@ -1,3 +1,4 @@
+import axios from 'axios';
 import * as Location from 'expo-location';
 
 import { request } from '../api';
@@ -21,9 +22,8 @@ export const getData = async (
   const address = await Location.reverseGeocodeAsync(location.coords);
   const currentCity: string = address.map((x: Address) => x.city);
   const val = cityinput ? cityinput : currentCity;
-  const endPoint = `current?access_key=${
-    process && process.env.KEY
-  }&query=${val}`;
+  const key = '4002299c4024aaf87b643da6a693e1f2';
+  const endPoint = `current?access_key=${key}&query=${val}`;
 
   return await request.get(endPoint);
 };

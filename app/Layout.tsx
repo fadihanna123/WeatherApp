@@ -1,11 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Dispatch } from 'redux';
 
 import CurrentLocation from '../components/CurrentLocation';
 import SearchBox from '../components/SearchBox';
+import { getCurrentLocation } from '../functions';
 import { CurrentDecReducerTypes } from '../models';
 
 const Layout: React.FC = () => {
@@ -14,6 +16,12 @@ const Layout: React.FC = () => {
   );
 
   const Tab = createBottomTabNavigator();
+
+  const dispatch: Dispatch<any> = useDispatch();
+
+  useEffect(() => {
+    getCurrentLocation(dispatch, true);
+  }, []);
 
   return (
     <NavigationContainer>
@@ -33,39 +41,31 @@ const Layout: React.FC = () => {
                   : currentDec === 'Light snow'
                   ? 'ios-snow'
                   : currentDec === 'Overcast'
-                  ? 'ios-weather'
+                  ? 'partly-sunny'
                   : currentDec === 'Clear'
-                  ? 'ios-weather'
+                  ? 'partly-sunny'
                   : currentDec === 'Heavy snow'
                   ? 'ios-snow'
                   : currentDec === 'Freezing Unknown Precipitation'
-                  ? 'ios-weather'
+                  ? 'partly-sunny'
                   : currentDec === 'Cloudy'
-                  ? 'ios-weather'
+                  ? 'partly-sunny'
                   : currentDec === 'Mist'
-                  ? 'ios-weather'
+                  ? 'partly-sunny'
                   : currentDec === 'Light rain shower'
                   ? 'ios-rainy'
                   : 'partly-sunny';
             } else if (route.name === 'Search Location') {
-              iconName = focused
-                ? 'ios-location'
-                : 'location-outline';
+              iconName = focused ? 'ios-location' : 'location-outline';
             }
 
-            // You can return any component that you like here!
-            return (
-              <Ionicons name={iconName} size={size} color={color} />
-            );
+            return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',
         })}
       >
-        <Tab.Screen
-          name='Current Location'
-          component={CurrentLocation}
-        />
+        <Tab.Screen name='Current Location' component={CurrentLocation} />
         <Tab.Screen name='Search Location' component={SearchBox} />
       </Tab.Navigator>
     </NavigationContainer>

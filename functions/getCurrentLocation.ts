@@ -30,7 +30,7 @@ export const getCurrentLocation = async (
   viewCurrent: boolean
 ) => {
   try {
-    dispatch(setViewCurrent?.(true));
+    dispatch(setViewCurrent(true));
 
     dispatch(setCurrentLoading(true));
 
@@ -40,9 +40,8 @@ export const getCurrentLocation = async (
     }
 
     const data: any = await getData();
-    if (data.code === 104 || data.code === undefined) {
-      Alert.alert('There are errors. Come back later please!');
-    } else if (
+
+    if (
       viewCurrent &&
       data.current.temperature &&
       data.location.name &&
@@ -54,7 +53,7 @@ export const getCurrentLocation = async (
 
       dispatch(setCurrentDec(data.current.weather_descriptions[0]));
 
-      dispatch(setCityInput?.(''));
+      dispatch(setCityInput(''));
     }
   } catch (err) {
     dispatch(setError('There is no such city in the world....'));

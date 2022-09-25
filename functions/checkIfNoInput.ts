@@ -29,7 +29,7 @@ export const checkIfNoInput = (
   cityInput: string | undefined
 ): void => {
   if (!cityInput) {
-    dispatch(setViewSearchBox(true));
+    dispatch(setViewSearchBox(false));
 
     dispatch(setError('Start typing first...'));
   } else {
@@ -38,9 +38,7 @@ export const checkIfNoInput = (
       data.location.name &&
       data.current.weather_descriptions[0]
     ) {
-      if (setViewSearchBox) {
-        setViewSearchBox(true);
-      }
+      dispatch(setViewSearchBox(true));
 
       dispatch(setTemp(data.current.temperature));
 

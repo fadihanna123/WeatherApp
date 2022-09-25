@@ -1,8 +1,4 @@
-import {
-  Keyboard,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import { ViewSearchBoxReducerTypes } from '../models';
@@ -20,7 +16,7 @@ const SearchBox: React.FC = () => {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <WeatherForm />
-        {!viewSearchBox && <WeatherData />}
+        {viewSearchBox && <WeatherData />}
         <NameBox />
       </View>
     </TouchableWithoutFeedback>

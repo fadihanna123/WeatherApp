@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm i
-pnpm manypkg check
+yarn install
+yarn manypkg check
 eslint .
 npx pretty-quick --staged
 rimraf node_modules .expo

@@ -1,6 +1,6 @@
 {
   "name": "weather_app",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
@@ -11,7 +11,7 @@
   },
   "lastUgrade": "20220905",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --tunnel",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -67,7 +67,9 @@
   },
   "engines": {
     "node": ">=14.12.0",
-    "npm": "Please use pnpm instead of NPM to install dependencies",
-    "yarn": "Please use pnpm instead of Yarn to install dependencies"
+    "npm": "Please use Yarn instead of NPM to install dependencies"
+  },
+  "resolutions": {
+    "@types/react": "17.0.21"
   }
 }
