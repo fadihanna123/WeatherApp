@@ -11,7 +11,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/dd898676-81b1-46a0-af98-84977156f722"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -27,7 +28,15 @@
       "favicon": "./assets/favicon.png"
     },
     "description": "",
-    "sdkVersion": "45.0.0"
+    "sdkVersion": "45.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "dd898676-81b1-46a0-af98-84977156f722"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   },
   "name": "weather_app"
 }
