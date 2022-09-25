@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as Location from 'expo-location';
 
 import { request } from '../api';

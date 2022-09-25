@@ -1,6 +1,5 @@
 import * as Location from 'expo-location';
 import { Dispatch } from 'react';
-import { Alert } from 'react-native';
 
 import {
   setCityInput,
