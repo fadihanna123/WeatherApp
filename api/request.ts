@@ -1,11 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-const request: {
-  get: Function;
-  post: Function;
-  put: Function;
-  delete: Function;
-} = {
+export const request = {
   get: async (url: string): Promise<void> => {
     const { data } = await axios.get(url);
     return data;
@@ -14,7 +9,7 @@ const request: {
   post: async (
     url: string,
     redata: any,
-    headers?: { headers: {} }
+    headers?: { headers: Record<string, string> }
   ): Promise<void> => {
     const { data } = await axios.post(url, redata, headers);
     return data;
@@ -23,11 +18,11 @@ const request: {
   put: async (
     url: string,
     data: any,
-    headers?: { headers: {} }
+    headers?: { headers: Record<string, string> }
   ): Promise<void> => await axios.put(url, data, headers),
 
-  delete: async (url: string, headers?: { headers: {} }): Promise<void> =>
-    await axios.delete(url, headers),
+  delete: async (
+    url: string,
+    headers?: { headers: Record<string, string> }
+  ): Promise<void> => await axios.delete(url, headers),
 };
-
-export { request };

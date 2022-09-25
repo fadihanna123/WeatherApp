@@ -1,36 +1,34 @@
+import { Dispatch } from 'redux';
+
+import { WeatherData } from '../models';
+import { setError, setLoading } from '../redux/actions';
 import { getData } from './apiHandler';
 import { checkIfNoInput } from './checkIfNoInput';
 
-const getWeather = async (
-  setLoading: ((loading: boolean) => void) | undefined,
-  cityinput: string | undefined,
-  setView: ((view: boolean) => void) | undefined,
-  setError: ((error: string) => void) | undefined,
-  setTemp: ((temp: number) => void) | undefined,
-  setCityName: ((cityName: string) => void) | undefined,
-  setDec: ((dec: string) => void) | undefined,
-  setCityInput: ((cityinput: string) => void) | undefined
+/**
+ * @author Fadi Hanna <fhanna181@gmail.com>
+ */
+
+/**
+ * Get all weather data based on city value.
+ *
+ * @param dispatch - Dispatch
+ * @param cityInput - City value.
+ */
+
+export const getWeather = async (
+  dispatch: Dispatch<any>,
+  cityInput: string | undefined
 ): Promise<void> => {
   try {
-    setLoading && setLoading(true);
+    dispatch(setLoading(true));
 
-    const data = await getData(cityinput);
+    const data = (await getData(cityInput)) as unknown as WeatherData;
 
-    checkIfNoInput(
-      data,
-      cityinput,
-      setView,
-      setError,
-      setTemp,
-      setCityName,
-      setDec,
-      setCityInput
-    );
+    checkIfNoInput(dispatch, data, cityInput);
   } catch (err) {
-    setError && setError("There is no such city in the world....");
+    dispatch(setError('There is no such city in the world....'));
   } finally {
-    setLoading && setLoading(false);
+    setLoading(false);
   }
 };
-
-export { getWeather };

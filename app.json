@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -28,6 +26,8 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
-  }
+    "description": "",
+    "sdkVersion": "45.0.0"
+  },
+  "name": "weather_app"
 }

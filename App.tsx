@@ -1,13 +1,20 @@
-import axios from "axios";
-import React from "react";
+import axios from 'axios';
+import React from 'react';
+import { Provider } from 'react-redux';
 
-import Layout from "./app/Layout";
+import Layout from './app/Layout';
+import { store } from './redux/store';
 
-const globalHeader: string = "application/json";
+const globalHeader: string = 'application/json';
+const baseURL: string = 'http://api.weatherstack.com/';
 
-axios.defaults.baseURL = process && process.env.BASE_URL;
-axios.defaults.headers.common["Content-Type"] = globalHeader;
+axios.defaults.baseURL = baseURL;
+axios.defaults.headers.common['Content-Type'] = globalHeader;
 
-const App: React.FC = () => <Layout />;
+const App: React.FC = () => (
+  <Provider store={store}>
+    <Layout />
+  </Provider>
+);
 
 export default App;
