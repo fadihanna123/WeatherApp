@@ -20,9 +20,7 @@ const WeatherForm: React.FC = () => {
       <TextInput
         clearButtonMode='always'
         defaultValue={cityInput}
-        onChangeText={(cityinput) =>
-          dispatch(setCityInput(cityinput))
-        }
+        onChangeText={(cityinput) => dispatch(setCityInput(cityinput))}
         style={weatherFormStyles.textinput}
         placeholder='Search City'
         onKeyPress={(event): void => {
