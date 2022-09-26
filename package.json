@@ -1,6 +1,6 @@
 {
   "name": "weather_app",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
