@@ -94,7 +94,6 @@ index.d.ts <br />
 .gitignore <br />
 app.json <br />
 App.tsx <br />
-babel.config.js <br />
 package.json <br />
 README.md <br />
 tsconfig.json <br />
