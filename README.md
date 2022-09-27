@@ -99,7 +99,7 @@ README.md <br />
 tsconfig.json <br />
 yarn.lock <br />
 
-### 1.3 Programming languages ​​used in the project:
+### 1.3 Programminglanguages ​​used in the project:
 Typescript and Javascript. <br />
 
 ### 1.4 Framework/Library:
