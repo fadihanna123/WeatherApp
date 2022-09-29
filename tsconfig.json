@@ -3,14 +3,14 @@
     "module": "esNext",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "esnext", "DOM.Iterable"],
     "moduleResolution": "node",
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
     "paths": {
-      "@assets/*": ["assets/*"]
+      "@assets/*": ["./assets/*"]
     }
   },
   "extends": "expo/tsconfig.base"

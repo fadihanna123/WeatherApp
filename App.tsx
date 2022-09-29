@@ -2,8 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import Layout from './app/Layout';
-import { store } from './redux/store';
+import Layout from './src/app/Layout';
+import { store } from './src/redux/app';
 
 const globalHeader: string = 'application/json';
 const baseURL: string = 'http://api.weatherstack.com/';
