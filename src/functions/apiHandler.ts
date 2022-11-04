@@ -17,12 +17,18 @@ import { Address } from '../models';
 export const getData = async (
   cityinput?: string | undefined
 ): Promise<void> => {
-  const location = await Location.getCurrentPositionAsync({});
-  const address = await Location.reverseGeocodeAsync(location.coords);
-  const currentCity: string = address.map((x: Address) => x.city);
-  const val = cityinput ? cityinput : currentCity;
-  const key = '4002299c4024aaf87b643da6a693e1f2';
-  const endPoint = `current?access_key=${key}&query=${val}`;
+  let val: string = '';
 
+  if (!cityinput) {
+    const location = await Location.getCurrentPositionAsync({});
+    const address = await Location.reverseGeocodeAsync(location.coords);
+    const currentCity: string = address.map((x: Address) => x.city);
+    val = currentCity;
+  } else {
+    val = cityinput;
+  }
+
+  const key: string = '4002299c4024aaf87b643da6a693e1f2';
+  const endPoint = `current?access_key=${key}&query=${val}`;
   return await request.get(endPoint);
 };
