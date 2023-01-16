@@ -36,7 +36,7 @@
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "babel-preset-expo": "~9.2.0",
     "babel-preset-react-native": "^4.0.1",
-    "eslint": "^8.25.0",
+    "eslint": "^8.32.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.13",
     "eslint-plugin-prefer-arrow": "^1.2.3",
