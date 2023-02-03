@@ -7,13 +7,14 @@ import { Address } from '../models';
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
 
+const getAddress = (item: Address): string => item.city;
+
 /**
  * Get all weather data based on city value.
  *
- * @param cityinput - City value
- * @returns Promise contains weather-data
+ * @param { string | undefined } cityinput - City value
+ * @returns { Promise<void> } Promise contains weather-data
  */
-
 export const getData = async (
   cityinput?: string | undefined
 ): Promise<void> => {
@@ -22,7 +23,7 @@ export const getData = async (
   if (!cityinput) {
     const location = await Location.getCurrentPositionAsync({});
     const address = await Location.reverseGeocodeAsync(location.coords);
-    const currentCity: string = address.map((x: Address) => x.city);
+    const currentCity: string = address.map(getAddress);
     val = currentCity;
   } else {
     val = cityinput;

@@ -1,6 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import React, { useEffect } from 'react';
+import { useColorScheme } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Dispatch } from 'redux';
 
@@ -9,18 +14,20 @@ import SearchBox from '../components/SearchBox';
 import { getCurrentLocation } from '../functions';
 import { useAppDispatch, useAppSelector } from '../redux/app';
 import { getCurrentDec } from '../redux/reducers';
+import { isDayTime, styles } from '../styles';
 
 const Layout: React.FC = () => {
   const currentDec = useAppSelector(getCurrentDec);
   const Tab = createBottomTabNavigator();
   const dispatch: Dispatch<any> = useAppDispatch();
+  const scheme = useColorScheme();
 
   useEffect(() => {
     getCurrentLocation(dispatch, true);
   }, []);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={({ route }: any) => ({
           tabBarIcon: ({ focused, color, size }: any) => {

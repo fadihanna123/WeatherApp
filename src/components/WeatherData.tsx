@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, useColorScheme, View } from 'react-native';
 
 import { useAppSelector } from '../redux/app';
 import { getCityName, getDec, getTemp } from '../redux/reducers';
@@ -9,6 +9,7 @@ const WeatherData: React.FC = () => {
   const dec = useAppSelector(getDec);
   const cityName = useAppSelector(getCityName);
   const temp = useAppSelector(getTemp);
+  const scheme = useColorScheme();
 
   return (
     <View>
@@ -42,7 +43,12 @@ const WeatherData: React.FC = () => {
               : { uri: null }
           }
         />
-        <Text style={weatherDataStyles.info}>
+        <Text
+          style={[
+            weatherDataStyles.info,
+            { color: scheme === 'dark' ? '#fff' : '#000' },
+          ]}
+        >
           <Text style={weatherDataStyles.cityname}>
             {cityName} {'\n'}
           </Text>

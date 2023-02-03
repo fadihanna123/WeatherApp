@@ -4,6 +4,7 @@ import {
   Keyboard,
   TextInput,
   TouchableWithoutFeedback,
+  useColorScheme,
   View,
 } from 'react-native';
 import { debounce } from 'ts-debounce';
@@ -24,6 +25,7 @@ const SearchBox: React.FC = () => {
   const cityInput = useAppSelector(getCityInput);
   const viewSearchBox = useAppSelector(getViewSearchBox);
   const dispatch = useAppDispatch();
+  const scheme = useColorScheme();
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -33,7 +35,13 @@ const SearchBox: React.FC = () => {
             clearButtonMode='always'
             defaultValue={cityInput}
             onChangeText={(cityinput) => dispatch(setCityInput(cityinput))}
-            style={weatherFormStyles.textinput}
+            style={[
+              weatherFormStyles.textinput,
+              {
+                color: scheme === 'dark' ? '#fff' : '#000',
+                borderColor: scheme === 'dark' ? '#FF0000' : '#000',
+              },
+            ]}
             placeholder='Search City'
             onKeyPress={(event): void => {
               if (event.nativeEvent.key === 'Enter' && cityInput !== '') {

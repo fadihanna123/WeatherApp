@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, useColorScheme, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import { getCurrentLocation } from '../functions';
@@ -21,6 +21,7 @@ const CurrentLocation: React.FC = () => {
   const CurrentLoc = useAppSelector(getCurrentLoc);
   const currentTemp = useAppSelector(getCurrentTemp);
   const dispatch = useAppDispatch();
+  const scheme = useColorScheme();
 
   useEffect(() => {
     getCurrentLocation(dispatch, viewCurrent);
@@ -64,7 +65,12 @@ const CurrentLocation: React.FC = () => {
               : { uri: null }
           }
         />
-        <Text style={weatherDataStyles.info}>
+        <Text
+          style={[
+            weatherDataStyles.info,
+            { color: scheme === 'dark' ? '#fff' : '#000' },
+          ]}
+        >
           <Text style={weatherDataStyles.cityname}>
             {CurrentLoc} {'\n'}
           </Text>

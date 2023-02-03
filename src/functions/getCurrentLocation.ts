@@ -1,5 +1,6 @@
 import * as Location from 'expo-location';
 import { Dispatch } from 'react';
+import { Alert } from 'react-native';
 
 import {
   setCityInput,
@@ -23,7 +24,6 @@ import { getData } from './apiHandler';
  * @param viewCurrent - Boolean
  * @returns Promise
  */
-
 export const getCurrentLocation = async (
   dispatch: Dispatch<any>,
   viewCurrent: boolean
@@ -34,7 +34,11 @@ export const getCurrentLocation = async (
     dispatch(setCurrentLoading(true));
 
     const { status } = await Location.requestForegroundPermissionsAsync();
+
     if (status !== 'granted') {
+      Alert.alert(
+        'You need to allow location services to use this app, please!'
+      );
       return;
     }
 
