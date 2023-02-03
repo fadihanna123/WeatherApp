@@ -14,7 +14,6 @@ import SearchBox from '../components/SearchBox';
 import { getCurrentLocation } from '../functions';
 import { useAppDispatch, useAppSelector } from '../redux/app';
 import { getCurrentDec } from '../redux/reducers';
-import { isDayTime, styles } from '../styles';
 
 const Layout: React.FC = () => {
   const currentDec = useAppSelector(getCurrentDec);
