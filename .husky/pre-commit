@@ -3,6 +3,6 @@
 
 yarn install
 yarn manypkg check
-eslint .
+yarn lint
 npx pretty-quick --staged
-rimraf node_modules .expo
+rm -rf node_modules .expo
