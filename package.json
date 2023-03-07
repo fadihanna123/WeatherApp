@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^40.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "expo": "^48.0.4",
+    "expo": "^48.0.5",
     "expo-location": "~15.1.1",
     "expo-status-bar": "~1.4.4",
     "expo-updates": "~0.16.3",
