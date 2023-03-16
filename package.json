@@ -38,7 +38,7 @@
     "babel-preset-react-native": "^4.0.1",
     "eslint": "^8.35.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-plugin-jsdoc": "^40.0.1",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "expo": "^48.0.6",
     "expo-location": "~15.1.1",
