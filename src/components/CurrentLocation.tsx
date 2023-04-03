@@ -31,7 +31,7 @@ const CurrentLocation: React.FC = () => {
     <View>
       <Spinner
         visible={currentLoading}
-        textContent={'Loading...'}
+        textContent='Loading...'
         textStyle={{ color: '#fff' }}
         animation='fade'
       />

@@ -1,24 +1,50 @@
-module.exports = {
+/**
+ * @type { import("eslint").Linter.Config }
+ */
+const config = {
   env: {
     browser: true,
     es6: true,
     node: true,
   },
   root: true,
-  extends: ['plugin:@typescript-eslint/recommended'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'eslint:recommended',
+    'universe/native',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'plugin:jsdoc/recommended',
+    'plugin:jsdoc/recommended-error',
+    'plugin:jsdoc/recommended-typescript',
+    'plugin:jsdoc/recommended-typescript-error',
+    'universe/node',
+    'universe/web',
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['tsconfig.json'],
     sourceType: 'module',
-    tsconfigRootDir: __dirname,
+    ecmaVersion: 'latest',
   },
   plugins: [
     'eslint-plugin-import',
     'eslint-plugin-jsdoc',
     'eslint-plugin-prefer-arrow',
     '@typescript-eslint',
+    'prefer-arrow',
+    'jsdoc',
   ],
   rules: {
+    'prefer-arrow/prefer-arrow-functions': [
+      'warn',
+      {
+        disallowPrototype: true,
+        singleReturnOnly: false,
+        classPropertiesAllowed: false,
+      },
+    ],
     'no-console': 'error',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
@@ -54,7 +80,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/consistent-type-assertions': 'error',
-    '@typescript-eslint/dot-notation': 'error',
     '@typescript-eslint/member-ordering': 'off',
     '@typescript-eslint/no-empty-function': [
       'error',
@@ -94,11 +119,8 @@ module.exports = {
     'id-denylist': [
       'error',
       'any',
-      'Number',
       'number',
-      'String',
       'string',
-      'Boolean',
       'boolean',
       'Undefined',
       'undefined',
@@ -140,7 +162,6 @@ module.exports = {
     'object-curly-newline': 'error',
     'object-shorthand': 'off',
     'one-var': ['error', 'never'],
-    'prefer-arrow/prefer-arrow-functions': 'error',
     'prefer-const': 'error',
     quotes: ['warn', 'single'],
     radix: 'error',
@@ -154,5 +175,11 @@ module.exports = {
     ],
     'use-isnan': 'error',
     'valid-typeof': 'off',
+    'jsdoc/no-types': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'import/no-unresolved': 'off',
+    'no-constant-condition': 'off',
   },
 };
+
+module.exports = config;

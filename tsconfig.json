@@ -13,6 +13,7 @@
       "@assets/*": ["./assets/*"]
     }
   },
+  "include": ["src/**/*", ".eslintrc.js", "App.tsx"],
   "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }
