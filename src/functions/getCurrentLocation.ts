@@ -11,6 +11,8 @@ import {
   setError,
   setViewCurrent,
 } from '../redux/reducers';
+
+// Components
 import { getData } from './apiHandler';
 
 /**
@@ -19,7 +21,6 @@ import { getData } from './apiHandler';
 
 /**
  * Get current location from user.
- *
  * @param dispatch - Dispatch
  * @param viewCurrent - Boolean
  * @returns Promise
@@ -43,6 +44,8 @@ export const getCurrentLocation = async (
     }
 
     const data: any = await getData();
+
+    console.log('Response: ', data);
 
     if (
       viewCurrent &&

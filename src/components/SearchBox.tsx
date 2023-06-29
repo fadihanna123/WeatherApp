@@ -18,6 +18,8 @@ import {
 } from '../redux/reducers';
 import { weatherFormStyles } from '../styles';
 import { styles } from '../styles/AppStyles';
+
+// Components
 import NameBox from './NameBox';
 import WeatherData from './WeatherData';
 

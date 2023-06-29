@@ -11,7 +11,6 @@ import { checkIfNoInput } from './checkIfNoInput';
 
 /**
  * Get all weather data based on city value.
- *
  * @param dispatch - Dispatch
  * @param cityInput - City value.
  */
@@ -24,6 +23,8 @@ export const getWeather = async (
     dispatch(setLoading(true));
 
     const data = (await getData(cityInput)) as unknown as WeatherData;
+
+    console.log('Response: ', data);
 
     checkIfNoInput(dispatch, data, cityInput);
   } catch (err) {

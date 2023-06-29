@@ -12,6 +12,8 @@ import {
   getViewCurrent,
 } from '../redux/reducers';
 import { weatherDataStyles } from '../styles';
+
+// Components
 import NameBox from './NameBox';
 
 const CurrentLocation: React.FC = () => {

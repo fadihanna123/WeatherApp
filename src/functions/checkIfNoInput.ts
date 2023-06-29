@@ -16,7 +16,6 @@ import {
 
 /**
  * Check if no value exists in text field.
- *
  * @param dispatch - Dispatch
  * @param data - Weatherdata object
  * @param cityInput - City value.

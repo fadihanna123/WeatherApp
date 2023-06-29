@@ -37,6 +37,7 @@ const config = {
     'jsdoc',
   ],
   rules: {
+    'jsdoc/check-tag-names': 'off',
     'prefer-arrow/prefer-arrow-functions': [
       'warn',
       {
@@ -45,7 +46,6 @@ const config = {
         classPropertiesAllowed: false,
       },
     ],
-    'no-console': 'error',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
       'error',
@@ -129,7 +129,6 @@ const config = {
     'import/order': 'off',
     'jsdoc/check-alignment': 'error',
     'jsdoc/check-indentation': 'error',
-    'jsdoc/newline-after-description': 'error',
     'max-classes-per-file': ['error', 13],
     'max-len': 'off',
     'new-parens': 'error',

@@ -11,7 +11,6 @@ const getAddress = (item: Address): string => item.city;
 
 /**
  * Get all weather data based on city value.
- *
  * @param { string | undefined } cityinput - City value
  * @returns { Promise<void> } Promise contains weather-data
  */

@@ -8,12 +8,13 @@ import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Dispatch } from 'redux';
-
-import CurrentLocation from '../components/CurrentLocation';
-import SearchBox from '../components/SearchBox';
 import { getCurrentLocation } from '../functions';
 import { useAppDispatch, useAppSelector } from '../redux/app';
 import { getCurrentDec } from '../redux/reducers';
+
+// Components
+import CurrentLocation from '../components/CurrentLocation';
+import SearchBox from '../components/SearchBox';
 
 const Layout: React.FC = () => {
   const currentDec = useAppSelector(getCurrentDec);
