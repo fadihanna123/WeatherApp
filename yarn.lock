@@ -4547,10 +4547,10 @@ expo-keep-awake@~12.3.0:
   resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-12.3.0.tgz#c42449ae19c993274ddc43aafa618792b6aec408"
   integrity sha512-ujiJg1p9EdCOYS05jh5PtUrfiZnK0yyLy+UewzqrjUqIT8eAGMQbkfOn3C3fHE7AKd5AefSMzJnS3lYZcZYHDw==
 
-expo-location@~16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-16.0.0.tgz#47922f4937192868fa799464c5654dbc9c67d7d6"
-  integrity sha512-v76QOjaYi4wfvqW1yKzMwKnWUcahJPq0dcg9W3Tm6x/HdCUHZJ6fNZw8wLmTZT8JNNCnqqRVZC67kbHG20odAg==
+expo-location@~16.1.0:
+  version "16.1.0"
+  resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-16.1.0.tgz#251a465790d6622f828fd18f0edb2a73b9664b72"
+  integrity sha512-/jfRyYrXb9vjr8HoYmVHnzEqnw+0jaoRbHsxj6ePPAbevXmvXZqYHFRtfZtQ+q32SB4X6kUAXu28eBcLS+tqaA==
 
 expo-manifests@~0.7.0:
   version "0.7.1"
