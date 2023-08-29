@@ -48,7 +48,7 @@
     "expo": "^49.0.7",
     "expo-location": "~16.1.0",
     "expo-status-bar": "~1.6.0",
-    "expo-updates": "~0.18.10",
+    "expo-updates": "~0.18.12",
     "prettier": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
