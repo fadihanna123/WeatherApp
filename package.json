@@ -45,7 +45,7 @@
     "eslint-plugin-jsdoc": "^46.5.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.0.0",
-    "expo": "^49.0.7",
+    "expo": "^49.0.9",
     "expo-location": "~16.1.0",
     "expo-status-bar": "~1.6.0",
     "expo-updates": "~0.18.12",
