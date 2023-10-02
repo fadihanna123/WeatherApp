@@ -20,7 +20,7 @@
     "format": "prettier . -w"
   },
   "dependencies": {
-    "@babel/core": "^7.22.17",
+    "@babel/core": "^7.23.0",
     "@manypkg/cli": "^0.21.0",
     "@react-native-async-storage/async-storage": "1.19.3",
     "@react-navigation/bottom-tabs": "^6.5.8",
