@@ -26,9 +26,15 @@
     "@react-navigation/bottom-tabs": "^6.5.9",
     "@react-navigation/native": "^6.1.8",
     "@reduxjs/toolkit": "^1.9.7",
+<<<<<<< HEAD
     "@types/eslint": "^8.44.4",
     "@types/react": "18.2.28",
     "@types/react-dom": "~18.2.13",
+=======
+    "@types/eslint": "^8.44.3",
+    "@types/react": "~18.2.20",
+    "@types/react-dom": "~18.2.7",
+>>>>>>> 25ae886078104c2014920a269f5048b7f6962c08
     "@types/react-native": "~0.72.3",
     "@types/react-native-loading-spinner-overlay": "^0.5.3",
     "@types/react-native-vector-icons": "^6.4.15",
@@ -44,7 +50,11 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsdoc": "^46.8.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
+<<<<<<< HEAD
     "eslint-plugin-prettier": "^5.0.1",
+=======
+    "eslint-plugin-prettier": "^5.0.0",
+>>>>>>> 25ae886078104c2014920a269f5048b7f6962c08
     "expo": "^49.0.13",
     "expo-location": "~16.3.0",
     "expo-status-bar": "~1.7.1",
@@ -54,7 +64,11 @@
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
     "react-native-dotenv": "^3.4.9",
+<<<<<<< HEAD
     "react-native-gesture-handler": "~2.13.2",
+=======
+    "react-native-gesture-handler": "~2.13.1",
+>>>>>>> 25ae886078104c2014920a269f5048b7f6962c08
     "react-native-loading-spinner-overlay": "^3.0.1",
     "react-native-reanimated": "~3.5.4",
     "react-native-safe-area-context": "4.7.2",

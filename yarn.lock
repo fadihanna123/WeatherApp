@@ -2175,10 +2175,17 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+<<<<<<< HEAD
 "@types/eslint@^8.44.4":
   version "8.44.4"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.4.tgz#28eaff82e1ca0a96554ec5bb0188f10ae1a74c2f"
   integrity sha512-lOzjyfY/D9QR4hY9oblZ76B90MYTB3RrQ4z2vBIJKj9ROCRqdkYl2gSUx1x1a4IWPjKJZLL4Aw1Zfay7eMnmnA==
+=======
+"@types/eslint@^8.44.3":
+  version "8.44.3"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.44.3.tgz#96614fae4875ea6328f56de38666f582d911d962"
+  integrity sha512-iM/WfkwAhwmPff3wZuPLYiHX18HI24jU8k1ZSH7P8FHwxTjZ2P6CoX2wnF43oprR+YXJM6UUxATkNvyv/JHd+g==
+>>>>>>> 25ae886078104c2014920a269f5048b7f6962c08
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -7649,10 +7656,17 @@ react-native-dotenv@^3.4.9:
   dependencies:
     dotenv "^16.3.1"
 
+<<<<<<< HEAD
 react-native-gesture-handler@~2.13.2:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.13.2.tgz#06813c250922db258ce4ee255f757e7ef32a3ae0"
   integrity sha512-EADHg1cFunvu47lyzlqCJQluQxUIGZwDpdq2GEBXxFmH8AWTI2ofurio5doWnFR+dLVEjaLAzI/dU2xQjP0/pA==
+=======
+react-native-gesture-handler@~2.13.1:
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.13.1.tgz#bad89caacd62c4560b9953b02f85f37ee42d5d4c"
+  integrity sha512-hW454X7sjuiBN+lobqw63pmT3boAmTl5OP6zQLq83iEe4T6PcHZ9lxzgCrebtgmutY8cJfq9rM2dOUVh9WBcww==
+>>>>>>> 25ae886078104c2014920a269f5048b7f6962c08
   dependencies:
     "@egjs/hammerjs" "^2.0.17"
     hoist-non-react-statics "^3.3.0"
