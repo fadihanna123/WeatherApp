@@ -10,6 +10,7 @@ WeatherApp is a mobile app that shows today's weather depending on the selected 
 .vscode/ <br />
 .vscode/extensions.json <br />
 .vscode/settings.json <br />
+.vscode/tasks.json <br />
 .expo-shared/ <br />
 .expo-shared/assets.json <br />
 .expo-shared/README.md <br />
