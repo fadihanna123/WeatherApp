@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * @type { import("eslint").Linter.Config }
  */
@@ -37,6 +38,7 @@ const config = {
     'jsdoc',
   ],
   rules: {
+    'import/export': 'off',
     'jsdoc/check-tag-names': 'off',
     'prefer-arrow/prefer-arrow-functions': [
       'warn',

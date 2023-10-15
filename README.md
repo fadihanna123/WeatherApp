@@ -33,6 +33,7 @@ api/ <br >
 api/index.ts <br >
 api/request.ts <br >
 app/ <br />
+app/index.ts <br />
 app/Layout.tsx <br />
 app/index.ts <br />
 components/ <br />
@@ -48,11 +49,6 @@ functions/checkIfNoInput.ts <br />
 functions/getCurrentLocation.ts <br />
 functions/getWeather.ts <br />
 functions/index.ts <br />
-models/ <br />
-models/address.model.ts <br />
-models/api.model.ts <br />
-models/redux.model.ts <br />
-models/index.ts <br />
 redux/ <br />
 redux/actions/ <br />
 redux/actions/index.ts <br />
@@ -78,6 +74,9 @@ styles/nameBox.ts <br />
 styles/WeatherDataStyles.ts <br />
 styles/WeatherFormStyles.ts <br />
 styles/index.ts <br />
+types/ <br />
+types/global.d.ts <br />
+types/index.ts <br />
 utils/ <br />
 utils/constants/ <br />
 utils/constants/index.ts <br />
@@ -99,8 +98,8 @@ README.md <br />
 tsconfig.json <br />
 yarn.lock <br />
 
-### 1.3 Programminglanguages ​​used in the project:
+### 1.3 Programminglanguages:
 Typescript and Javascript. <br />
 
-### 1.4 Framework/Library:
-React, React Native, Expo and JSON. <br />
+### 1.4 Frameworks/Librarys:
+React, React Native, Expo and JSON. 

@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
+    "alwaysStrict": true,
     "paths": {
       "@assets/*": ["./assets/*"]
     }

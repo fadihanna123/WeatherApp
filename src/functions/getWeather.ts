@@ -1,6 +1,5 @@
 import { Dispatch } from 'redux';
 
-import { WeatherData } from '../models';
 import { setError, setLoading } from '../redux/reducers';
 import { getData } from './apiHandler';
 import { checkIfNoInput } from './checkIfNoInput';

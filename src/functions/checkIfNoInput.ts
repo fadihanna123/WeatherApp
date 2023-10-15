@@ -1,6 +1,5 @@
 import { Dispatch } from 'redux';
 
-import { WeatherData } from '../models';
 import {
   setCityInput,
   setCityName,

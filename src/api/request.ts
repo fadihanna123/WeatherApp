@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+const globalHeader: string = 'application/json';
+const baseURL: string = 'http://api.weatherstack.com/';
+
+axios.defaults.baseURL = baseURL;
+axios.defaults.headers.common['Content-Type'] = globalHeader;
+
 export const request = {
   get: async (url: string): Promise<void> => {
     const { data } = await axios.get(url);

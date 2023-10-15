@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { Dispatch } from 'redux';
 import { getCurrentLocation } from '../functions';
 import { useAppDispatch, useAppSelector } from '../redux/app';
@@ -62,7 +62,9 @@ const Layout: React.FC = () => {
               iconName = focused ? 'ios-location' : 'location-outline';
             }
 
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return (
+              <Ionicons name={iconName as any} size={size} color={color} />
+            );
           },
           tabBarActiveTintColor: 'tomato',
           tabBarInactiveTintColor: 'gray',

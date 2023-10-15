@@ -1,13 +1,10 @@
 import * as Location from 'expo-location';
 
 import { request } from '../api';
-import { Address } from '../models';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
-
-const getAddress = (item: Address): string => item.city;
 
 /**
  * Get all weather data based on city value.
@@ -17,13 +14,14 @@ const getAddress = (item: Address): string => item.city;
 export const getData = async (
   cityinput?: string | undefined
 ): Promise<void> => {
-  let val: string = '';
+  let val: string | string[] = '';
 
   if (!cityinput) {
     const location = await Location.getCurrentPositionAsync({});
     const address = await Location.reverseGeocodeAsync(location.coords);
-    const currentCity: string = address.map(getAddress);
-    val = currentCity;
+    address.map((item: any) => {
+      val = item.city;
+    });
   } else {
     val = cityinput;
   }
