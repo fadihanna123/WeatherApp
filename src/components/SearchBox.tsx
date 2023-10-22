@@ -19,8 +19,6 @@ import {
 import { weatherFormStyles } from '../styles';
 import { styles } from '../styles/AppStyles';
 
-// Components
-import NameBox from './NameBox';
 import WeatherData from './WeatherData';
 
 const SearchBox: React.FC = () => {
@@ -62,7 +60,6 @@ const SearchBox: React.FC = () => {
           />
         </View>
         {viewSearchBox && <WeatherData />}
-        <NameBox />
       </View>
     </TouchableWithoutFeedback>
   );

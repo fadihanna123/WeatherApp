@@ -13,9 +13,6 @@ import {
 } from '../redux/reducers';
 import { weatherDataStyles } from '../styles';
 
-// Components
-import NameBox from './NameBox';
-
 const CurrentLocation: React.FC = () => {
   const viewCurrent = useAppSelector(getViewCurrent);
   const currentLoading = useAppSelector(getCurrentLoading);
@@ -108,7 +105,6 @@ const CurrentLocation: React.FC = () => {
           </Text>
         </Text>
       </View>
-      <NameBox />
     </View>
   );
 };
