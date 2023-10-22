@@ -4,8 +4,8 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { useColorScheme } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, useColorScheme } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Dispatch } from 'redux';
 import { getCurrentLocation } from '../functions';
@@ -15,6 +15,7 @@ import { getCurrentDec } from '../redux/reducers';
 // Components
 import CurrentLocation from '../components/CurrentLocation';
 import SearchBox from '../components/SearchBox';
+import About from '../components/About';
 
 const Layout: React.FC = () => {
   const currentDec = useAppSelector(getCurrentDec);
@@ -60,6 +61,8 @@ const Layout: React.FC = () => {
                   : 'partly-sunny';
             } else if (route.name === 'Search Location') {
               iconName = focused ? 'ios-location' : 'location-outline';
+            } else if (route.name === 'About') {
+              iconName = 'information';
             }
 
             return (
@@ -72,6 +75,7 @@ const Layout: React.FC = () => {
       >
         <Tab.Screen name='Current Location' component={CurrentLocation} />
         <Tab.Screen name='Search Location' component={SearchBox} />
+        <Tab.Screen name='About' component={About} />
       </Tab.Navigator>
     </NavigationContainer>
   );
