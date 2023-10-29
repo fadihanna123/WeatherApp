@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Animated, View, Text, useColorScheme, Button } from 'react-native';
+import React from 'react';
+import { View, Text, useColorScheme } from 'react-native';
 import { aboutStyles } from '../styles';
 
 const About = () => {
