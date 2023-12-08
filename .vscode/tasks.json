@@ -5,7 +5,6 @@
       "label": "Install dependencies",
       "type": "shell",
       "command": "yarn --emoji",
-      "runOptions": { "runOn": "folderOpen" },
       "presentation": {
         "reveal": "silent",
         "close": true
