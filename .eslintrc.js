@@ -40,6 +40,7 @@ const config = {
   rules: {
     'import/export': 'off',
     'jsdoc/check-tag-names': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     'prefer-arrow/prefer-arrow-functions': [
       'warn',
       {
