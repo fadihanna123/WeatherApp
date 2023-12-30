@@ -6,3 +6,4 @@ yarn manypkg check
 yarn lint
 npx pretty-quick --staged
 rm -rf node_modules .expo
+git add .
