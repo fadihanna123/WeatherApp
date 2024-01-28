@@ -1,106 +1,43 @@
-## 1. WeatherApp
-WeatherApp is a mobile app that shows today's weather depending on the selected city. <br />
+## WeatherApp
+> WeatherApp is a mobile app that shows today's weather depending on the selected city, and also it shows current weather fetched from mobile location. <br />
 
-### 1.1 Folder Structure
-.github/ <br />
-.github/dependabot.yml <br />
-.github/CODEOWNERS <br />
-.husky/ <br />
-.husky/pre-commit <br />
-.vscode/ <br />
-.vscode/extensions.json <br />
-.vscode/settings.json <br />
-.vscode/tasks.json <br />
-.expo-shared/ <br />
-.expo-shared/assets.json <br />
-.expo-shared/README.md <br />
-assets/ <br />
-assets/adaptive-icon.png <br />
-assets/clear.png <br />
-assets/cloudy.png <br />
-assets/favicon.png <br />
-assets/freezingrain.png <br />
-assets/heavysnow.png <br />
-assets/icon.png <br />
-assets/mist.png <br />
-assets/overcast.png <br />
-assets/partlycloudy.png <br />
-assets/rain.png <br />
-assets/smoke.png <br />
-assets/snowlight.png <br />
-assets/splash.png <br />
-assets/sunny.png <br />
-api/ <br >
-api/index.ts <br >
-api/request.ts <br >
-app/ <br />
-app/index.ts <br />
-app/Layout.tsx <br />
-app/index.ts <br />
-components/ <br />
-components/CurrentLocation.tsx <br />
-components/NameBox.tsx <br />
-components/SearchBox.tsx <br />
-components/WeatherData.tsx <br />
-components/WeatherForm.tsx <br />
-components/index.tsx <br />
-functions/ <br />
-functions/apiHandler.ts <br />
-functions/checkIfNoInput.ts <br />
-functions/getCurrentLocation.ts <br />
-functions/getWeather.ts <br />
-functions/index.ts <br />
-redux/ <br />
-redux/actions/ <br />
-redux/actions/index.ts <br />
-redux/reducers/ <br />
-redux/reducers/cityInput.ts <br />
-redux/reducers/cityName.ts <br />
-redux/reducers/currentDec.ts <br />
-redux/reducers/currentLoading.ts <br />
-redux/reducers/currentLoc.ts <br />
-redux/reducers/currentTemp.ts <br />
-redux/reducers/dec.ts <br />
-redux/reducers/error.ts <br />
-redux/reducers/loading.ts <br />
-redux/reducers/temp.ts <br />
-redux/reducers/viewCurrent.ts <br />
-redux/reducers/viewSearchBox.ts <br />
-redux/reducers/index.ts <br />
-redux/store/ <br />
-redux/store/index.ts <br />
-styles/ <br />
-styles/AppStyles.ts <br />
-styles/nameBox.ts <br />
-styles/WeatherDataStyles.ts <br />
-styles/WeatherFormStyles.ts <br />
-styles/index.ts <br />
-types/ <br />
-types/global.d.ts <br />
-types/index.ts <br />
-utils/ <br />
-utils/constants/ <br />
-utils/constants/index.ts <br />
-.editorconfig <br />
-.env <br />
-.env.example <br />
-.eslintrc.js <br />
-.eslintignore <br />
-.gitattributes <br />
-.prettierrc <br />
-.prettierignore <br />
-AUTHORS <br />
-index.d.ts <br />
-.gitignore <br />
-app.json <br />
-App.tsx <br />
-package.json <br />
-README.md <br />
-tsconfig.json <br />
-yarn.lock <br />
+<br />
 
-### 1.3 Programminglanguages:
-Typescript and Javascript. <br />
+## 🚀 Quick Start
+```sh
+# Clone the project
+git clone https://github.com/fadihanna123/WeatherApp.git
+```
 
-### 1.4 Frameworks/Librarys:
-React, React Native, Expo and JSON. 
+```sh
+# Go to the directory
+cd WeatherApp
+```
+
+```sh
+# Install dependencies
+yarn
+```
+
+```sh
+# Start the server
+yarn dev
+```
+- Download and install Expo app
+
+- Scan QR code using your mobile camera
+
+- Enjoy!
+
+## Usage
+> You can search weather based on provided city. The app have a tab to shows current location weather.
+
+## 🤝 Contributing
+1 - Clone the project. <br />
+2 - Fork the project. <br />
+3 - Create your own branch: ```
+git checkout -b <your branchname>``` <br />
+4 - Push changes. <br />
+5 - Create a pull request. <br />
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/WeatherApp/issues).
