@@ -31,7 +31,7 @@ const Layout: React.FC = () => {
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={({ route }: any) => ({
-          tabBarIcon: ({ focused, color, size }: any) => {
+          tabBarIcon: ({ color, size }: any) => {
             let iconName: string = '';
 
             if (route.name === 'Current Location') {
@@ -39,28 +39,28 @@ const Layout: React.FC = () => {
                 currentDec === 'Sunny'
                   ? 'sunny'
                   : currentDec === 'Partly cloudy'
-                  ? 'ios-partly-sunny'
-                  : currentDec === 'Rain'
-                  ? 'ios-rainy'
-                  : currentDec === 'Light snow'
-                  ? 'ios-snow'
-                  : currentDec === 'Overcast'
-                  ? 'partly-sunny'
-                  : currentDec === 'Clear'
-                  ? 'partly-sunny'
-                  : currentDec === 'Heavy snow'
-                  ? 'ios-snow'
-                  : currentDec === 'Freezing Unknown Precipitation'
-                  ? 'partly-sunny'
-                  : currentDec === 'Cloudy'
-                  ? 'partly-sunny'
-                  : currentDec === 'Mist'
-                  ? 'partly-sunny'
-                  : currentDec === 'Light rain shower'
-                  ? 'ios-rainy'
-                  : 'partly-sunny';
+                    ? 'ios-partly-sunny'
+                    : currentDec === 'Rain'
+                      ? 'ios-rainy'
+                      : currentDec === 'Light snow'
+                        ? 'ios-snow'
+                        : currentDec === 'Overcast'
+                          ? 'partly-sunny'
+                          : currentDec === 'Clear'
+                            ? 'partly-sunny'
+                            : currentDec === 'Heavy snow'
+                              ? 'ios-snow'
+                              : currentDec === 'Freezing Unknown Precipitation'
+                                ? 'partly-sunny'
+                                : currentDec === 'Cloudy'
+                                  ? 'partly-sunny'
+                                  : currentDec === 'Mist'
+                                    ? 'partly-sunny'
+                                    : currentDec === 'Light rain shower'
+                                      ? 'ios-rainy'
+                                      : 'partly-sunny';
             } else if (route.name === 'Search Location') {
-              iconName = focused ? 'ios-location' : 'location-outline';
+              iconName = 'location-outline';
             } else if (route.name === 'About') {
               iconName = 'information';
             }

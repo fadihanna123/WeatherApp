@@ -42,26 +42,26 @@ const CurrentLocation: React.FC = () => {
             currentDec === 'Sunny'
               ? require('../assets/sunny.png')
               : currentDec === 'Partly cloudy'
-              ? require('../assets/partlycloudy.png')
-              : currentDec === 'Rain'
-              ? require('../assets/rain.png')
-              : currentDec === 'Light snow'
-              ? require('../assets/snowlight.png')
-              : currentDec === 'Overcast'
-              ? require('../assets/overcast.png')
-              : currentDec === 'Clear'
-              ? require('../assets/clear.png')
-              : currentDec === 'Heavy snow'
-              ? require('../assets/heavysnow.png')
-              : currentDec === 'Freezing Unknown Precipitation'
-              ? require('../assets/freezingrain.png')
-              : currentDec === 'Cloudy'
-              ? require('../assets/cloudy.png')
-              : currentDec === 'Mist'
-              ? require('../assets/mist.png')
-              : currentDec === 'Light rain shower'
-              ? require('../assets/light_rain_shower.png')
-              : { uri: null }
+                ? require('../assets/partlycloudy.png')
+                : currentDec === 'Rain'
+                  ? require('../assets/rain.png')
+                  : currentDec === 'Light snow'
+                    ? require('../assets/snowlight.png')
+                    : currentDec === 'Overcast'
+                      ? require('../assets/overcast.png')
+                      : currentDec === 'Clear'
+                        ? require('../assets/clear.png')
+                        : currentDec === 'Heavy snow'
+                          ? require('../assets/heavysnow.png')
+                          : currentDec === 'Freezing Unknown Precipitation'
+                            ? require('../assets/freezingrain.png')
+                            : currentDec === 'Cloudy'
+                              ? require('../assets/cloudy.png')
+                              : currentDec === 'Mist'
+                                ? require('../assets/mist.png')
+                                : currentDec === 'Light rain shower'
+                                  ? require('../assets/light_rain_shower.png')
+                                  : { uri: null }
           }
         />
         <Text
@@ -79,28 +79,28 @@ const CurrentLocation: React.FC = () => {
             {currentDec === 'Sunny'
               ? 'Solig'
               : currentDec === 'Partly cloudy'
-              ? 'Delvis \n molnigt'
-              : currentDec === 'Rain'
-              ? 'Regnig'
-              : currentDec === 'Light snow'
-              ? 'Lätt snö'
-              : currentDec === 'Overcast'
-              ? 'Molnig'
-              : currentDec === 'Clear'
-              ? 'Klar'
-              : currentDec === 'Heavy snow'
-              ? 'Tung \n snö'
-              : currentDec === 'Freezing Unknown Precipitation'
-              ? 'Frysning \n Okänd \n nederbörd'
-              : currentDec === 'Cloudy'
-              ? 'Molnig'
-              : currentDec === 'Smoke'
-              ? 'Rök'
-              : currentDec === 'Mist'
-              ? 'Dimma'
-              : 'Light rain shower'
-              ? 'Lätt regnskur'
-              : ''}
+                ? 'Delvis \n molnigt'
+                : currentDec === 'Rain'
+                  ? 'Regnig'
+                  : currentDec === 'Light snow'
+                    ? 'Lätt snö'
+                    : currentDec === 'Overcast'
+                      ? 'Molnig'
+                      : currentDec === 'Clear'
+                        ? 'Klar'
+                        : currentDec === 'Heavy snow'
+                          ? 'Tung \n snö'
+                          : currentDec === 'Freezing Unknown Precipitation'
+                            ? 'Frysning \n Okänd \n nederbörd'
+                            : currentDec === 'Cloudy'
+                              ? 'Molnig'
+                              : currentDec === 'Smoke'
+                                ? 'Rök'
+                                : currentDec === 'Mist'
+                                  ? 'Dimma'
+                                  : 'Light rain shower'
+                                    ? 'Lätt regnskur'
+                                    : ''}
             {'\n'}
           </Text>
         </Text>
