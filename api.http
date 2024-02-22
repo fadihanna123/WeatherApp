@@ -1,5 +1,0 @@
-@base = http://api.weatherstack.com
-@key = 4002299c4024aaf87b643da6a693e1f2
-@val = car
-###
-GET {{base}}/current?access_key={{key}}&query={{val}}
