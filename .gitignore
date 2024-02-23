@@ -2,9 +2,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/reactnative
 # Edit at https://www.toptal.com/developers/gitignore?templates=reactnative
 
-# API
-api.http
-
 ### ReactNative ###
 # React Native Stack Base
 
@@ -207,7 +204,6 @@ jspm_packages/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
 .env.test
 .env*.local
 

@@ -1,0 +1,3 @@
+@val = car
+###
+GET {{EXPO_PUBLIC_API_URL}}/current?access_key={{EXPO_PUBLIC_API_KEY}}&query={{val}}

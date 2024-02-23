@@ -1,6 +1,7 @@
 import * as Location from 'expo-location';
 
 import { request } from '../api';
+import { apiKey } from '../utils';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -26,7 +27,6 @@ export const getData = async (
     val = cityinput;
   }
 
-  const key: string = '4002299c4024aaf87b643da6a693e1f2';
-  const endPoint = `current?access_key=${key}&query=${val}`;
+  const endPoint = `current?access_key=${apiKey}&query=${val}`;
   return await request.get(endPoint);
 };

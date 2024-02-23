@@ -38,6 +38,7 @@ const config = {
     'jsdoc',
   ],
   rules: {
+    'dot-notation': 'off',
     'import/export': 'off',
     'jsdoc/check-tag-names': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
@@ -115,7 +116,6 @@ const config = {
     complexity: 'off',
     'constructor-super': 'error',
     curly: 'error',
-    'dot-notation': 'error',
     'eol-last': 'off',
     eqeqeq: ['error', 'smart'],
     'guard-for-in': 'error',
