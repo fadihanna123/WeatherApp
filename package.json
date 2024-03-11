@@ -22,7 +22,7 @@
   "dependencies": {
     "@manypkg/cli": "^0.21.2",
     "@react-navigation/bottom-tabs": "^6.5.16",
-    "@react-navigation/native": "^6.1.14",
+    "@react-navigation/native": "^6.1.15",
     "@reduxjs/toolkit": "^2.2.1",
     "@types/eslint": "^8.56.5",
     "@types/react": "18.2.64",
