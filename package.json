@@ -20,7 +20,7 @@
     "format": "prettier . -w"
   },
   "dependencies": {
-    "@manypkg/cli": "^0.21.3",
+    "@manypkg/cli": "^0.21.4",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@reduxjs/toolkit": "^2.2.3",
