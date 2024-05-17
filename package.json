@@ -23,7 +23,7 @@
     "@manypkg/cli": "^0.21.4",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
-    "@reduxjs/toolkit": "^2.2.3",
+    "@reduxjs/toolkit": "^2.2.5",
     "@types/eslint": "^8.56.6",
     "@types/react": "18.2.79",
     "@types/react-native": "~0.73.0",
