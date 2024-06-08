@@ -20,7 +20,7 @@ import About from '../components/About';
 const Layout: React.FC = () => {
   const currentDec = useAppSelector(getCurrentDec);
   const Tab = createBottomTabNavigator();
-  const dispatch: Dispatch<any> = useAppDispatch();
+  const dispatch: Dispatch = useAppDispatch();
   const scheme = useColorScheme();
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const Layout: React.FC = () => {
   return (
     <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
-        screenOptions={({ route }: any) => ({
-          tabBarIcon: ({ color, size }: any) => {
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => {
             let iconName: string = '';
 
             if (route.name === 'Current Location') {

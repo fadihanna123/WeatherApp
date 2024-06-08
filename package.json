@@ -17,10 +17,10 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "eslint .",
-    "format": "prettier . -w"
+    "format": "prettier . -w",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@manypkg/cli": "^0.21.4",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@reduxjs/toolkit": "^2.2.5",
@@ -28,24 +28,24 @@
     "@types/react": "18.2.79",
     "@types/react-native": "~0.73.0",
     "@types/react-native-loading-spinner-overlay": "^0.5.6",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "7.12.0",
     "axios": "^1.7.2",
-    "eslint": "^8.57.0",
+    "eslint": "8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-universe": "^13.0.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.2.7",
+    "eslint-plugin-jsdoc": "^48.2.9",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.1.3",
-    "expo": "^51.0.9",
+    "expo": "^51.0.11",
     "expo-location": "~17.0.1",
-    "expo-updates": "~0.25.15",
+    "expo-updates": "~0.25.16",
     "prettier": "^3.3.1",
     "react": "18.2.0",
     "react-native": "0.74.2",
     "react-native-loading-spinner-overlay": "^3.0.1",
-    "react-native-safe-area-context": "4.10.3",
+    "react-native-safe-area-context": "4.10.4",
     "react-native-web": "~0.19.12",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
@@ -58,5 +58,9 @@
   },
   "resolutions": {
     "@types/react": "17.0.21"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11",
+    "typescript-eslint": "^7.12.0"
   }
 }
