@@ -61,6 +61,6 @@
   },
   "devDependencies": {
     "husky": "^9.0.11",
-    "typescript-eslint": "^7.13.0"
+    "typescript-eslint": "^7.13.1"
   }
 }
