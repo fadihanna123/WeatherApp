@@ -40,7 +40,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "expo": "^51.0.20",
     "expo-location": "~17.0.1",
-    "expo-updates": "~0.25.18",
+    "expo-updates": "~0.25.19",
     "prettier": "^3.3.2",
     "react": "18.2.0",
     "react-native": "0.74.3",
