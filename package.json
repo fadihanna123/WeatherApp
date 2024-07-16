@@ -41,7 +41,7 @@
     "expo": "^51.0.20",
     "expo-location": "~17.0.1",
     "expo-updates": "~0.25.20",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "react": "18.2.0",
     "react-native": "0.74.3",
     "react-native-loading-spinner-overlay": "^3.0.1",
