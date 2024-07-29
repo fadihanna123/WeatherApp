@@ -23,7 +23,7 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
-    "@reduxjs/toolkit": "^2.2.6",
+    "@reduxjs/toolkit": "^2.2.7",
     "@types/eslint": "^8.56.6",
     "@types/react": "18.2.79",
     "@types/react-native": "~0.73.0",
