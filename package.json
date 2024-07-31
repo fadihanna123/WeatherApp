@@ -60,7 +60,7 @@
     "@types/react": "17.0.21"
   },
   "devDependencies": {
-    "husky": "^9.1.3",
+    "husky": "^9.1.4",
     "typescript-eslint": "^7.16.0"
   }
 }
