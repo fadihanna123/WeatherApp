@@ -35,7 +35,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-universe": "^13.0.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.9.2",
+    "eslint-plugin-jsdoc": "^48.10.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.2.1",
     "expo": "^51.0.23",
@@ -60,7 +60,7 @@
     "@types/react": "17.0.21"
   },
   "devDependencies": {
-    "husky": "^9.1.3",
+    "husky": "^9.1.4",
     "typescript-eslint": "^7.16.0"
   }
 }
