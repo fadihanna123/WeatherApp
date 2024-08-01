@@ -4387,10 +4387,10 @@ expo-updates@~0.25.21:
     ignore "^5.3.1"
     resolve-from "^5.0.0"
 
-expo@^51.0.23:
-  version "51.0.23"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.23.tgz#a2813c4ea45f5158838221093a6a08eae47534a1"
-  integrity sha512-tZv7hiDIlKMlQxzC/IxfiLEpp0xcm6VISuoeFobkvoelEWsj6bpjlsF0HP4k6pr3ELL++r7wE1VGYa/AceC6+w==
+expo@^51.0.24:
+  version "51.0.24"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.24.tgz#fb64a85ded249d3f64e9aecb40b9fa9e200b4bb4"
+  integrity sha512-HoOuNIWXzS6Gxifcb0N+qRt5K6iR9YitQaWIVNB8elyupvQdyI566IMgMBiO45NgpO5es0sfFNNBasxBHLkbUw==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.18.26"
