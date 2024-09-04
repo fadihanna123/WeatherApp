@@ -18,7 +18,8 @@
     "eject": "expo eject",
     "lint": "eslint .",
     "format": "prettier . -w",
-    "prepare": "husky"
+    "prepare": "husky",
+    "setup": "yarn --emoji --silent --ignore-scripts"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.6.1",
