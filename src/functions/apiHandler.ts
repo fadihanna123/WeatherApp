@@ -20,9 +20,7 @@ export const getData = async (
   if (!cityinput) {
     const location = await Location.getCurrentPositionAsync({});
     const address = await Location.reverseGeocodeAsync(location.coords);
-    address.forEach((item: any) => {
-      val = item.city;
-    });
+    address.forEach((item: any) => (val = item.city));
   } else {
     val = cityinput;
   }

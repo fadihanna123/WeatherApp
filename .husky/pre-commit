@@ -1,5 +1,5 @@
 yarn install
 yarn lint
 npx pretty-quick --staged
-rimraf node_modules .expo
+rm -rf node_modules .expo
 git add .
