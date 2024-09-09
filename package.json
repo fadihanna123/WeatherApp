@@ -51,7 +51,7 @@
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
     "ts-debounce": "^4.0.0",
-    "typescript": "~5.3.3"
+    "typescript": "~5.6.2"
   },
   "engines": {
     "node": ">=16.0.0 <=21.x.x",
