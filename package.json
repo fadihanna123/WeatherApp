@@ -19,7 +19,8 @@
     "lint": "eslint .",
     "format": "prettier . -w",
     "prepare": "husky",
-    "setup": "yarn --emoji --silent --ignore-scripts"
+    "setup": "yarn --emoji --silent --ignore-scripts",
+    "clear": "rimraf node_modules dist"
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.3",
