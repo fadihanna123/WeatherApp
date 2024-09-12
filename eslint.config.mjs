@@ -44,7 +44,6 @@ export default [
       'prefer-arrow': preferArrow,
       '@typescript-eslint': fixupPluginRules(typescriptEslint),
     },
-
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -55,13 +54,11 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
-
     rules: {
       'dot-notation': 'off',
       'import/export': 'off',
       'jsdoc/check-tag-names': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
-
       'prefer-arrow/prefer-arrow-functions': [
         'warn',
         {
@@ -70,59 +67,21 @@ export default [
           classPropertiesAllowed: false,
         },
       ],
-
       '@typescript-eslint/adjacent-overload-signatures': 'error',
-
       '@typescript-eslint/array-type': [
         'error',
         {
           default: 'array',
         },
       ],
-
-      '@typescript-eslint/ban-types': [
-        'error',
-        {
-          types: {
-            Object: {
-              message: 'Avoid using the `Object` type. Did you mean `object`?',
-            },
-
-            Function: {
-              message:
-                'Avoid using the `Function` type. Prefer a specific function type, like `() => void`.',
-            },
-
-            Boolean: {
-              message:
-                'Avoid using the `Boolean` type. Did you mean `boolean`?',
-            },
-
-            Number: {
-              message: 'Avoid using the `Number` type. Did you mean `number`?',
-            },
-
-            String: {
-              message: 'Avoid using the `String` type. Did you mean `string`?',
-            },
-
-            Symbol: {
-              message: 'Avoid using the `Symbol` type. Did you mean `symbol`?',
-            },
-          },
-        },
-      ],
-
       '@typescript-eslint/consistent-type-assertions': 'error',
       '@typescript-eslint/member-ordering': 'off',
-
       '@typescript-eslint/no-empty-function': [
         'error',
         {
           allow: ['constructors'],
         },
       ],
-
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-misused-new': 'error',
@@ -134,7 +93,6 @@ export default [
       '@typescript-eslint/prefer-for-of': 'error',
       '@typescript-eslint/prefer-function-type': 'error',
       '@typescript-eslint/prefer-namespace-keyword': 'error',
-
       '@typescript-eslint/triple-slash-reference': [
         'error',
         {
@@ -143,9 +101,7 @@ export default [
           lib: 'always',
         },
       ],
-
       '@typescript-eslint/unified-signatures': 'error',
-
       'brace-style': [
         'error',
         '1tbs',
@@ -153,7 +109,6 @@ export default [
           allowSingleLine: false,
         },
       ],
-
       'comma-dangle': 'off',
       complexity: 'off',
       'constructor-super': 'error',
@@ -182,17 +137,17 @@ export default [
       'no-cond-assign': 'error',
       'no-debugger': 'error',
       'no-empty': 'error',
-
       'no-empty-function': [
         'error',
         {
           allow: ['constructors'],
         },
       ],
-
       'no-eval': 'error',
+      '@typescript-eslint/ban-types': 'off',
       'no-fallthrough': 'off',
       '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
       'no-invalid-this': 'off',
       'no-new-wrappers': 'error',
       'no-throw-literal': 'error',
@@ -211,7 +166,6 @@ export default [
       quotes: ['warn', 'single'],
       radix: 'error',
       semi: 'error',
-
       'spaced-comment': [
         'error',
         'always',
@@ -219,7 +173,6 @@ export default [
           markers: ['/'],
         },
       ],
-
       'use-isnan': 'error',
       'valid-typeof': 'off',
       'jsdoc/no-types': 'off',
