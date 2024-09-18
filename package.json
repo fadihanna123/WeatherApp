@@ -65,7 +65,7 @@
     "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.10.0",
-    "eslint-plugin-jsdoc": "^50.2.3",
+    "eslint-plugin-jsdoc": "^50.2.4",
     "globals": "^15.9.0",
     "husky": "^9.1.6",
     "typescript-eslint": "8.5.0"
