@@ -14,8 +14,10 @@ const WeatherData: React.FC = () => {
   return (
     <View>
       <View style={weatherDataStyles.contentContainer}>
+        <Text style={weatherDataStyles.cityname}>
+          {cityName} {'\n'}
+        </Text>
         <Image
-          resizeMode='stretch'
           style={weatherDataStyles.tempImg}
           source={
             dec === 'Sunny'
@@ -49,16 +51,20 @@ const WeatherData: React.FC = () => {
             { color: scheme === 'dark' ? '#fff' : '#000' },
           ]}
         >
-          <Text style={weatherDataStyles.cityname}>
-            {cityName} {'\n'}
+          <Text
+            style={[
+              weatherDataStyles.tempInfo,
+              { color: temp < 0 ? '#ff0000' : '#fff' },
+            ]}
+          >
+            {temp}
           </Text>
-          <Text style={weatherDataStyles.tempInfo}>{temp}</Text>
           <Text style={weatherDataStyles.decInfo}>
             {'\n'}
             {dec === 'Sunny'
               ? 'Solig'
               : dec === 'Partly cloudy'
-                ? 'Delvis \n molnigt'
+                ? 'Delvis molnigt'
                 : dec === 'Rain'
                   ? 'Regnig'
                   : dec === 'Light snow'
@@ -68,9 +74,9 @@ const WeatherData: React.FC = () => {
                       : dec === 'Clear'
                         ? 'Klar'
                         : dec === 'Heavy snow'
-                          ? 'Tung \n snö'
+                          ? 'Tung snö'
                           : dec === 'Freezing Unknown Precipitation'
-                            ? 'Frysning \n Okänd \n nederbörd'
+                            ? 'Frysning Okänd nederbörd'
                             : dec === 'Cloudy'
                               ? 'Molnig'
                               : dec === 'Smoke'
@@ -80,7 +86,6 @@ const WeatherData: React.FC = () => {
                                   : 'Light rain shower'
                                     ? 'Lätt regnskur'
                                     : ''}
-            {'\n'}
           </Text>
         </Text>
       </View>

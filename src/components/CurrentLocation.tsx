@@ -35,8 +35,11 @@ const CurrentLocation: React.FC = () => {
         animation='fade'
       />
       <View style={weatherDataStyles.contentContainer}>
+        <Text style={weatherDataStyles.cityname}>
+          {'\n'}
+          {!currentLoading ? CurrentLoc : ''} {'\n'}
+        </Text>
         <Image
-          resizeMode='stretch'
           style={weatherDataStyles.tempImg}
           source={
             currentDec === 'Sunny'
@@ -70,38 +73,43 @@ const CurrentLocation: React.FC = () => {
             { color: scheme === 'dark' ? '#fff' : '#000' },
           ]}
         >
-          <Text style={weatherDataStyles.cityname}>
-            {CurrentLoc} {'\n'}
+          <Text
+            style={[
+              weatherDataStyles.tempInfo,
+              { color: currentTemp < 0 ? '#ff0000' : '#fff' },
+            ]}
+          >
+            {!currentLoading ? currentTemp : ''}
           </Text>
-          <Text style={weatherDataStyles.tempInfo}>{currentTemp}</Text>
+          {'\n'}
           <Text style={weatherDataStyles.decInfo}>
-            {'\n'}
-            {currentDec === 'Sunny'
-              ? 'Solig'
-              : currentDec === 'Partly cloudy'
-                ? 'Delvis \n molnigt'
-                : currentDec === 'Rain'
-                  ? 'Regnig'
-                  : currentDec === 'Light snow'
-                    ? 'Lätt snö'
-                    : currentDec === 'Overcast'
-                      ? 'Molnig'
-                      : currentDec === 'Clear'
-                        ? 'Klar'
-                        : currentDec === 'Heavy snow'
-                          ? 'Tung \n snö'
-                          : currentDec === 'Freezing Unknown Precipitation'
-                            ? 'Frysning \n Okänd \n nederbörd'
-                            : currentDec === 'Cloudy'
-                              ? 'Molnig'
-                              : currentDec === 'Smoke'
-                                ? 'Rök'
-                                : currentDec === 'Mist'
-                                  ? 'Dimma'
-                                  : 'Light rain shower'
-                                    ? 'Lätt regnskur'
-                                    : ''}
-            {'\n'}
+            {!currentLoading
+              ? currentDec === 'Sunny'
+                ? 'Solig'
+                : currentDec === 'Partly cloudy'
+                  ? 'Delvis molnigt'
+                  : currentDec === 'Rain'
+                    ? 'Regnig'
+                    : currentDec === 'Light snow'
+                      ? 'Lätt snö'
+                      : currentDec === 'Overcast'
+                        ? 'Molnig'
+                        : currentDec === 'Clear'
+                          ? 'Klar'
+                          : currentDec === 'Heavy snow'
+                            ? 'Tung snö'
+                            : currentDec === 'Freezing Unknown Precipitation'
+                              ? 'Frysning Okänd nederbörd'
+                              : currentDec === 'Cloudy'
+                                ? 'Molnig'
+                                : currentDec === 'Smoke'
+                                  ? 'Rök'
+                                  : currentDec === 'Mist'
+                                    ? 'Dimma'
+                                    : 'Light rain shower'
+                                      ? 'Lätt regnskur'
+                                      : ''
+              : ''}
           </Text>
         </Text>
       </View>

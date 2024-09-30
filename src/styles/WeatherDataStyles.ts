@@ -2,26 +2,27 @@ import { StyleSheet } from 'react-native';
 
 export const weatherDataStyles = StyleSheet.create({
   contentContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
+    flexDirection: 'column',
   },
   tempImg: {
-    justifyContent: 'center',
-    width: '50%',
-    height: '100%',
-    margin: 10,
+    width: '100%',
+    height: '50%',
   },
   info: {
-    margin: 30,
+    margin: 20,
   },
   cityname: {
-    fontSize: 18,
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 25,
   },
   tempInfo: {
-    fontSize: 40,
+    textAlign: 'center',
+    fontSize: 60,
   },
   decInfo: {
-    fontSize: 20,
+    textAlign: 'center',
+    fontSize: 40,
   },
   errorStyle: { textAlign: 'center', fontSize: 30 },
 });

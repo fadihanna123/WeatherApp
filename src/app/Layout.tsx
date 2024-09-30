@@ -39,7 +39,7 @@ const Layout: React.FC = () => {
                 currentDec === 'Sunny'
                   ? 'sunny'
                   : currentDec === 'Partly cloudy'
-                    ? 'ios-partly-sunny'
+                    ? 'partly-sunny'
                     : currentDec === 'Rain'
                       ? 'ios-rainy'
                       : currentDec === 'Light snow'

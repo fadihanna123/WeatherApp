@@ -1,6 +1,6 @@
 {
   "name": "weather_app",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "license": "MIT",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
@@ -28,7 +28,7 @@
     "@react-navigation/native": "^6.1.18",
     "@reduxjs/toolkit": "^2.2.7",
     "@types/eslint": "^9.6.1",
-    "@types/react": "18.3.8",
+    "@types/react": "18.2.79",
     "@types/react-native": "~0.73.0",
     "@types/react-native-loading-spinner-overlay": "^0.5.6",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
@@ -40,14 +40,14 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.2.1",
-    "expo": "^51.0.32",
+    "expo": "~51.0.34",
     "expo-location": "~17.0.1",
     "expo-updates": "~0.25.25",
     "prettier": "^3.3.3",
-    "react": "18.3.1",
-    "react-native": "0.75.3",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
     "react-native-loading-spinner-overlay": "^3.0.1",
-    "react-native-safe-area-context": "4.11.0",
+    "react-native-safe-area-context": "4.10.5",
     "react-native-web": "~0.19.12",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",
@@ -64,10 +64,10 @@
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.10.0",
-    "eslint-plugin-jsdoc": "^50.2.4",
+    "@eslint/js": "^9.11.1",
+    "eslint-plugin-jsdoc": "^50.3.0",
     "globals": "^15.9.0",
     "husky": "^9.1.6",
-    "typescript-eslint": "8.6.0"
+    "typescript-eslint": "8.7.0"
   }
 }
