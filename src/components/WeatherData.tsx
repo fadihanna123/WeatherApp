@@ -36,7 +36,7 @@ const WeatherData: React.FC = () => {
                           ? require('../assets/heavysnow.png')
                           : dec === 'Freezing Unknown Precipitation'
                             ? require('../assets/freezingrain.png')
-                            : dec === 'Cloudy'
+                            : dec === 'Cloudy '
                               ? require('../assets/cloudy.png')
                               : dec === 'Mist'
                                 ? require('../assets/mist.png')

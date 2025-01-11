@@ -58,7 +58,7 @@ const CurrentLocation: React.FC = () => {
                           ? require('../assets/heavysnow.png')
                           : currentDec === 'Freezing Unknown Precipitation'
                             ? require('../assets/freezingrain.png')
-                            : currentDec === 'Cloudy'
+                            : currentDec === 'Cloudy '
                               ? require('../assets/cloudy.png')
                               : currentDec === 'Mist'
                                 ? require('../assets/mist.png')
