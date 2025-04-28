@@ -1,7 +1,7 @@
 import * as Location from 'expo-location';
 
-import { request } from '../api';
-import { apiKey } from '../utils';
+import { request } from '@api/request';
+import { apiKey } from '@utils/envs';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

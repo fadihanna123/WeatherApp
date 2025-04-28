@@ -1,9 +1,9 @@
 import axios from 'axios';
+import { apiUrl } from '@utils/envs';
 
 const globalHeader: string = 'application/json';
-const baseURL: string = 'http://api.weatherstack.com/';
 
-axios.defaults.baseURL = baseURL;
+axios.defaults.baseURL = apiUrl;
 axios.defaults.headers.common['Content-Type'] = globalHeader;
 
 export const request = {

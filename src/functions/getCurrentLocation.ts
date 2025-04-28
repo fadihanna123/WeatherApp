@@ -2,6 +2,7 @@ import * as Location from 'expo-location';
 import { Dispatch } from 'react';
 import { Alert } from 'react-native';
 
+// Components
 import {
   setCityInput,
   setCurrentDec,
@@ -10,9 +11,7 @@ import {
   setCurrentTemp,
   setError,
   setViewCurrent,
-} from '../redux/reducers';
-
-// Components
+} from '@redux/reducers';
 import { getData } from './apiHandler';
 
 /**

@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "module": "esNext",
+    "target": "ES2017",
+    "module": "ES2015",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
     "lib": ["dom", "esnext", "DOM.Iterable"],
@@ -20,23 +22,31 @@
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitThis": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./src/types"],
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
     "useUnknownInCatchVariables": false,
-    "rootDir": ".",
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "removeComments": true,
     "noUnusedParameters": true,
     "paths": {
-      "@assets/*": ["./assets/*"]
+      "@core/*": ["./src/"],
+      "@app/*": ["./src/app/*"],
+      "@api/*": ["./src/api/*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@functions/*": ["./src/functions/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["src/**/*", "App.tsx"],
-  "exclude": ["node_modules"],
+  "include": ["./src/**/*", "./App.tsx"],
+  "exclude": ["./node_modules"],
   "extends": "expo/tsconfig.base"
 }

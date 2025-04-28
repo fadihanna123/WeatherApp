@@ -9,16 +9,12 @@ import {
 } from 'react-native';
 import { debounce } from 'ts-debounce';
 
-import { getWeather } from '../functions';
-import { useAppDispatch, useAppSelector } from '../redux/app';
-import {
-  getCityInput,
-  getViewSearchBox,
-  setCityInput,
-} from '../redux/reducers';
-import { weatherFormStyles } from '../styles';
-import { styles } from '../styles/AppStyles';
-
+// Components
+import { getWeather } from '@functions/getWeather';
+import { useAppDispatch, useAppSelector } from '@redux/app';
+import { getCityInput, getViewSearchBox, setCityInput } from '@redux/reducers';
+import { weatherFormStyles } from '@styles/WeatherFormStyles';
+import { styles } from '@styles/AppStyles';
 import WeatherData from './WeatherData';
 
 const SearchBox: React.FC = () => {

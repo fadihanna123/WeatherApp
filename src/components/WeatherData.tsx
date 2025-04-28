@@ -1,9 +1,10 @@
 import React from 'react';
 import { Image, Text, useColorScheme, View } from 'react-native';
 
-import { useAppSelector } from '../redux/app';
-import { getCityName, getDec, getTemp } from '../redux/reducers';
-import { weatherDataStyles } from '../styles';
+// Components
+import { useAppSelector } from '@redux/app';
+import { getCityName, getDec, getTemp } from '@redux/reducers';
+import { weatherDataStyles } from '@styles/WeatherDataStyles';
 
 const WeatherData: React.FC = () => {
   const dec = useAppSelector(getDec);

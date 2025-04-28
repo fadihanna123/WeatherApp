@@ -3,6 +3,7 @@
  */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+// Components
 import { RootState } from '../app';
 
 const initialState: number = 0;

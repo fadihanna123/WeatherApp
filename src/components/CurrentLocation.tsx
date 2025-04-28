@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 import { Image, Text, useColorScheme, View } from 'react-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 
-import { getCurrentLocation } from '../functions';
-import { useAppDispatch, useAppSelector } from '../redux/app';
+// Components
+import { getCurrentLocation } from '@functions/getCurrentLocation';
+import { useAppDispatch, useAppSelector } from '@redux/app';
 import {
   getCurrentDec,
   getCurrentLoading,
   getCurrentLoc,
   getCurrentTemp,
   getViewCurrent,
-} from '../redux/reducers';
-import { weatherDataStyles } from '../styles';
+} from '@redux/reducers';
+import { weatherDataStyles } from '@styles/WeatherDataStyles';
 
 const CurrentLocation: React.FC = () => {
   const viewCurrent = useAppSelector(getViewCurrent);

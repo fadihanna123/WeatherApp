@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, useColorScheme } from 'react-native';
-import { aboutStyles } from '../styles';
+
+// Components
+import { aboutStyles } from '@styles/About';
 
 const About = () => {
   const scheme = useColorScheme();

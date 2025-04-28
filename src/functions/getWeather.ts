@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import { setError, setLoading } from '../redux/reducers';
+import { setError, setLoading } from '@redux/reducers';
 import { getData } from './apiHandler';
 import { checkIfNoInput } from './checkIfNoInput';
 

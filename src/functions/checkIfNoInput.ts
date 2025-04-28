@@ -7,7 +7,7 @@ import {
   setError,
   setTemp,
   setViewSearchBox,
-} from '../redux/reducers';
+} from '@redux/reducers';
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>

@@ -1,13 +1,12 @@
 // @ts-check
-import React from 'react';
+import React, { FC } from 'react';
 import { Provider } from 'react-redux';
 
-import { store } from './src/redux/app';
-
 // Components
-import Layout from './src/app/Layout';
+import Layout from '@app/Layout';
+import { store } from '@redux/app';
 
-const App: React.FC = () => (
+const App: FC = () => (
   <Provider store={store}>
     <Layout />
   </Provider>
