@@ -1,43 +1,98 @@
-## WeatherApp
-> WeatherApp is a mobile app that shows today's weather depending on the selected city, and also it shows current weather fetched from mobile location. <br />
+# WeatherApp 🌤️
 
-<br />
+A modern, cross-platform weather application built with React Native and Expo. This app provides real-time weather information with a beautiful and intuitive user interface.
 
-## 🚀 Quick Start
-```sh
-# Clone the project
+## Features
+
+- Real-time weather updates
+- Location-based weather information
+- Cross-platform support (iOS, Android)
+- Modern and responsive UI
+- Redux for state management
+- TypeScript for type safety
+
+## Prerequisites
+
+- Node.js (>=16.0.0 <=22.x.x)
+- Yarn (recommended package manager)
+- Expo CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
+
+## Installation
+
+1. Clone the repository:
+```bash
 git clone https://github.com/fadihanna123/WeatherApp.git
-```
-
-```sh
-# Go to the directory
 cd WeatherApp
 ```
 
-```sh
-# Install dependencies
-yarn
+2. Install dependencies:
+```bash
+yarn setup
 ```
 
-```sh
-# Start the server
+## Development
+
+To start the development server:
+
+```bash
+# Start the development server with tunnel
 yarn dev
+
+# Start for specific platforms
+yarn android  # Android
+yarn ios      # iOS
+yarn web      # Web
 ```
-- Download and install Expo app
 
-- Scan QR code using your mobile camera
+## Available Scripts
 
-- Enjoy!
+- `yarn setup` - Install dependencies
+- `yarn dev` - Start development server with tunnel
+- `yarn android` - Start Android app
+- `yarn ios` - Start iOS app
+- `yarn web` - Start web version
+- `yarn eject` - Eject from Expo
+- `yarn lint` - Run ESLint
+- `yarn format` - Format code with Prettier
+- `yarn clear` - Clean node_modules and dist
 
-## Usage
-> You can search weather based on provided city. The app have a tab to shows current location weather.
+## Tech Stack
 
-## 🤝 Contributing
-1 - Clone the project. <br />
-2 - Fork the project. <br />
-3 - Create your own branch: ```
-git checkout -b <your branchname>``` <br />
-4 - Push changes. <br />
-5 - Create a pull request. <br />
+- React Native
+- Expo
+- TypeScript
+- Redux Toolkit
+- React Navigation
+- Axios
+- ESLint & Prettier
+- Husky (Git hooks)
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/WeatherApp/issues).
+## Project Structure
+
+```
+WeatherApp/
+├── src/           # Source code
+├── .expo-shared/  # Expo shared configurations
+├── .github/       # GitHub configurations
+├── .husky/        # Git hooks
+├── .vscode/       # VS Code settings
+└── ...            # Configuration files
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions, please [open an issue](https://github.com/fadihanna123/WeatherApp/issues) on GitHub.
