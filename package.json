@@ -40,7 +40,7 @@
     "eslint-config-universe": "15.0.3",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
-    "eslint-plugin-prettier": "5.2.6",
+    "eslint-plugin-prettier": "5.4.0",
     "expo": "~52.0.46",
     "expo-location": "~18.1.4",
     "expo-updates": "~0.28.12",
