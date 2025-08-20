@@ -50,7 +50,7 @@
     "react-native": "0.79.2",
     "react-native-loading-spinner-overlay": "3.0.1",
     "react-native-safe-area-context": "5.4.0",
-    "react-native-web": "~0.20.0",
+    "react-native-web": "~0.21.1",
     "react-redux": "9.2.0",
     "redux": "5.0.1",
     "ts-debounce": "4.0.0",
