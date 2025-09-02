@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "5.4.0",
     "expo": "~52.0.46",
     "expo-location": "~18.1.6",
-    "expo-updates": "~0.28.13",
+    "expo-updates": "~0.28.17",
     "prettier": "3.6.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
