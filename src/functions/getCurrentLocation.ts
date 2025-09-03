@@ -44,7 +44,7 @@ export const getCurrentLocation = async (
 
     const data: any = await getData();
 
-    console.log('Response: ', data);
+    console.log('Response: ', JSON.stringify(data, null, '\t'));
 
     if (
       viewCurrent &&

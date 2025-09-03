@@ -54,8 +54,6 @@ yarn web      # Web
 - `yarn ios` - Start iOS app
 - `yarn web` - Start web version
 - `yarn eject` - Eject from Expo
-- `yarn lint` - Run ESLint
-- `yarn format` - Format code with Prettier
 - `yarn clear` - Clean node_modules and dist
 
 ## Tech Stack
@@ -66,7 +64,6 @@ yarn web      # Web
 - Redux Toolkit
 - React Navigation
 - Axios
-- ESLint & Prettier
 - Husky (Git hooks)
 
 ## Project Structure

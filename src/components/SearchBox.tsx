@@ -7,7 +7,6 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import { debounce } from 'ts-debounce';
 
 // Components
 import { getWeather } from '@functions/getWeather';
@@ -46,7 +45,7 @@ const SearchBox: React.FC = () => {
               }
             }}
             onSubmitEditing={() => {
-              debounce(getWeather(dispatch, cityInput) as any, 1500);
+              getWeather(dispatch, cityInput) as any, 1500;
             }}
           />
           <Button

@@ -6,10 +6,16 @@ import { Provider } from 'react-redux';
 import Layout from '@app/Layout';
 import { store } from '@redux/app';
 
-const App: FC = () => (
-  <Provider store={store}>
-    <Layout />
-  </Provider>
-);
+const App: FC = () => {
+  if (!process.env['EXPO_PUBLIC_API_KEY']) {
+    throw new Error('API Key is missing? Add them!');
+  }
+
+  return (
+    <Provider store={store}>
+      <Layout />
+    </Provider>
+  );
+};
 
 export default App;

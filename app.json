@@ -15,13 +15,15 @@
   },
   "assetBundlePatterns": ["**/*"],
   "ios": {
-    "supportsTablet": true
+    "supportsTablet": true,
+    "bundleIdentifier": "com.fadihanna.weatherapp"
   },
   "android": {
     "adaptiveIcon": {
       "foregroundImage": "./src/assets/adaptive-icon.png",
       "backgroundColor": "#FFFFFF"
-    }
+    },
+    "package": "com.fadihanna.weatherapp"
   },
   "web": {
     "favicon": "./src/assets/favicon.png"
@@ -31,8 +33,6 @@
     "eas": {
       "projectId": "dd898676-81b1-46a0-af98-84977156f722"
     }
-  },
-  "runtimeVersion": {
-    "policy": "sdkVersion"
   }
 }
+

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Image, Text, useColorScheme, View } from 'react-native';
-import Spinner from 'react-native-loading-spinner-overlay';
 
 // Components
 import { getCurrentLocation } from '@functions/getCurrentLocation';
@@ -29,14 +28,13 @@ const CurrentLocation: React.FC = () => {
 
   return (
     <View>
-      <Spinner
-        visible={currentLoading}
-        textContent='Loading...'
-        textStyle={{ color: '#fff' }}
-        animation='fade'
-      />
       <View style={weatherDataStyles.contentContainer}>
-        <Text style={weatherDataStyles.cityname}>
+        <Text
+          style={[
+            weatherDataStyles.cityname,
+            { color: scheme === 'dark' ? '#fff' : '#000' },
+          ]}
+        >
           {'\n'}
           {!currentLoading ? CurrentLoc : ''} {'\n'}
         </Text>
@@ -45,71 +43,72 @@ const CurrentLocation: React.FC = () => {
           source={
             currentDec === 'Sunny'
               ? require('../assets/sunny.png')
-              : currentDec === 'Partly cloudy'
-                ? require('../assets/partlycloudy.png')
-                : currentDec === 'Rain'
-                  ? require('../assets/rain.png')
-                  : currentDec === 'Light snow'
-                    ? require('../assets/snowlight.png')
-                    : currentDec === 'Overcast'
-                      ? require('../assets/overcast.png')
-                      : currentDec === 'Clear'
-                        ? require('../assets/clear.png')
-                        : currentDec === 'Heavy snow'
-                          ? require('../assets/heavysnow.png')
-                          : currentDec === 'Freezing Unknown Precipitation'
-                            ? require('../assets/freezingrain.png')
-                            : currentDec === 'Cloudy '
-                              ? require('../assets/cloudy.png')
-                              : currentDec === 'Mist'
-                                ? require('../assets/mist.png')
-                                : currentDec === 'Light rain shower'
-                                  ? require('../assets/light_rain_shower.png')
-                                  : { uri: null }
+              : currentDec === 'Partly Cloudy '
+              ? require('../assets/partlycloudy.png')
+              : currentDec === 'Rain'
+              ? require('../assets/rain.png')
+              : currentDec === 'Light snow'
+              ? require('../assets/snowlight.png')
+              : currentDec === 'Overcast'
+              ? require('../assets/overcast.png')
+              : currentDec === 'Clear'
+              ? require('../assets/clear.png')
+              : currentDec === 'Heavy snow'
+              ? require('../assets/heavysnow.png')
+              : currentDec === 'Freezing Unknown Precipitation'
+              ? require('../assets/freezingrain.png')
+              : currentDec === 'Cloudy '
+              ? require('../assets/cloudy.png')
+              : currentDec === 'Mist'
+              ? require('../assets/mist.png')
+              : currentDec === 'Light rain shower'
+              ? require('../assets/light_rain_shower.png')
+              : { uri: null }
           }
         />
-        <Text
-          style={[
-            weatherDataStyles.info,
-            { color: scheme === 'dark' ? '#fff' : '#000' },
-          ]}
-        >
+        <Text style={weatherDataStyles.info}>
           <Text
             style={[
               weatherDataStyles.tempInfo,
               { color: currentTemp < 0 ? '#ff0000' : '#fff' },
+              { color: scheme === 'dark' ? '#fff' : '#000' },
             ]}
           >
             {!currentLoading ? currentTemp : ''}
           </Text>
           {'\n'}
-          <Text style={weatherDataStyles.decInfo}>
+          <Text
+            style={[
+              weatherDataStyles.decInfo,
+              { color: scheme === 'dark' ? '#fff' : '#000' },
+            ]}
+          >
             {!currentLoading
               ? currentDec === 'Sunny'
                 ? 'Solig'
-                : currentDec === 'Partly cloudy'
-                  ? 'Delvis molnigt'
-                  : currentDec === 'Rain'
-                    ? 'Regnig'
-                    : currentDec === 'Light snow'
-                      ? 'Lätt snö'
-                      : currentDec === 'Overcast'
-                        ? 'Molnig'
-                        : currentDec === 'Clear'
-                          ? 'Klar'
-                          : currentDec === 'Heavy snow'
-                            ? 'Tung snö'
-                            : currentDec === 'Freezing Unknown Precipitation'
-                              ? 'Frysning Okänd nederbörd'
-                              : currentDec === 'Cloudy'
-                                ? 'Molnig'
-                                : currentDec === 'Smoke'
-                                  ? 'Rök'
-                                  : currentDec === 'Mist'
-                                    ? 'Dimma'
-                                    : 'Light rain shower'
-                                      ? 'Lätt regnskur'
-                                      : ''
+                : currentDec === 'Partly Cloudy '
+                ? 'Delvis molnigt'
+                : currentDec === 'Rain'
+                ? 'Regnig'
+                : currentDec === 'Light snow'
+                ? 'Lätt snö'
+                : currentDec === 'Overcast'
+                ? 'Molnig'
+                : currentDec === 'Clear'
+                ? 'Klar'
+                : currentDec === 'Heavy snow'
+                ? 'Tung snö'
+                : currentDec === 'Freezing Unknown Precipitation'
+                ? 'Frysning Okänd nederbörd'
+                : currentDec === 'Cloudy'
+                ? 'Molnig'
+                : currentDec === 'Smoke'
+                ? 'Rök'
+                : currentDec === 'Mist'
+                ? 'Dimma'
+                : 'Light rain shower'
+                ? 'Lätt regnskur'
+                : ''
               : ''}
           </Text>
         </Text>
