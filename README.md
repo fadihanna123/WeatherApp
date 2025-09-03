@@ -64,7 +64,6 @@ yarn web      # Web
 - Redux Toolkit
 - React Navigation
 - Axios
-- Husky (Git hooks)
 
 ## Project Structure
 
@@ -73,7 +72,6 @@ WeatherApp/
 ├── src/           # Source code
 ├── .expo-shared/  # Expo shared configurations
 ├── .github/       # GitHub configurations
-├── .husky/        # Git hooks
 ├── .vscode/       # VS Code settings
 └── ...            # Configuration files
 ```
