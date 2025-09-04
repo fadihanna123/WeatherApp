@@ -13,7 +13,9 @@
     "fallbackToCacheTimeout": 0,
     "url": "https://u.expo.dev/dd898676-81b1-46a0-af98-84977156f722"
   },
-  "assetBundlePatterns": ["**/*"],
+  "assetBundlePatterns": [
+    "**/*"
+  ],
   "ios": {
     "supportsTablet": true,
     "bundleIdentifier": "com.fadihanna.weatherapp"
@@ -33,6 +35,8 @@
     "eas": {
       "projectId": "dd898676-81b1-46a0-af98-84977156f722"
     }
+  },
+  "runtimeVersion": {
+    "policy": "appVersion"
   }
 }
-

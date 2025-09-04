@@ -44,3 +44,6 @@ node_modules
 
 # Production
 dist
+
+# Eas CLI
+eas.json
