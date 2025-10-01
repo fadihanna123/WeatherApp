@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "globals": "16.4.0",
-    "typescript": "~5.9.2",
+    "typescript": "~5.9.3",
     "@types/react": "~19.1.13"
   }
 }
