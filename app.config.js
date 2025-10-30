@@ -20,10 +20,6 @@ export default ({ config }) => ({
   },
   assetBundlePatterns: ["**/*"],
   ios: {
-    config: {
-      apiUrl: process.env.EXPO_PUBLIC_API_URL,
-      apiKey: process.env.EXPO_PUBLIC_API_KEY,
-    },
     supportsTablet: true,
     bundleIdentifier: "com.fadihanna.weatherapp",
   },
