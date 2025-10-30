@@ -1,8 +1,8 @@
-import { Dispatch } from 'redux';
+import { Dispatch } from "redux";
 
-import { setError, setLoading } from '@redux/reducers';
-import { getData } from './apiHandler';
-import { checkIfNoInput } from './checkIfNoInput';
+import { setError, setLoading } from "@redux/reducers";
+import { getData } from "./apiHandler";
+import { checkIfNoInput } from "./checkIfNoInput";
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -23,11 +23,11 @@ export const getWeather = async (
 
     const data = (await getData(cityInput)) as unknown as WeatherData;
 
-    console.log('Response: ', data);
+    console.log("Response: ", JSON.stringify(data, null, "\t"));
 
     checkIfNoInput(dispatch, data, cityInput);
   } catch (err) {
-    dispatch(setError('There is no such city in the world....'));
+    dispatch(setError("There is no such city in the world...."));
   } finally {
     setLoading(false);
   }
