@@ -6,7 +6,8 @@ export const weatherDataStyles = StyleSheet.create({
   },
   tempImg: {
     width: "100%",
-    height: "60%",
+    height: "50%",
+    margin: 10,
   },
   info: {
     margin: 20,
@@ -26,4 +27,3 @@ export const weatherDataStyles = StyleSheet.create({
   },
   errorStyle: { textAlign: "center", fontSize: 30 },
 });
-

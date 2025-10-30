@@ -65,6 +65,12 @@ const CurrentLocation: React.FC = () => {
               ? require("../assets/light_rain_shower.png")
               : currentDec === "Light Drizzle"
               ? require("../assets/light_drizzle.png")
+              : currentDec === "Light Drizzle, Drizzle And Rain"
+              ? require("../assets/light_drizzle.png")
+              : currentDec === "Drizzle"
+              ? require("../assets/drizzle.png")
+              : currentDec === "Patchy rain nearby"
+              ? require("../assets/patchy_rain_nearby.png")
               : { uri: null }
           }
         />
@@ -112,6 +118,12 @@ const CurrentLocation: React.FC = () => {
                 ? "Lätt regnskur"
                 : currentDec === "Light Drizzle"
                 ? "Lätt duggregn"
+                : currentDec === "Light Drizzle, Drizzle And Rain"
+                ? "Lätt duggregn, duggregn och regn"
+                : currentDec === "Drizzle"
+                ? "Dugga"
+                : currentDec === "Patchy rain nearby"
+                ? "Fläckigt regn i närheten"
                 : ""
               : ""}
           </Text>

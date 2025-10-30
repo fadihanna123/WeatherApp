@@ -45,6 +45,12 @@ const WeatherData: React.FC = () => {
               ? require("../assets/light_rain_shower.png")
               : dec === "Light Drizzle"
               ? require("../assets/light_drizzle.png")
+              : dec === "Light Drizzle, Drizzle And Rain"
+              ? require("../assets/light_drizzle.png")
+              : dec === "Drizzle"
+              ? require("../assets/drizzle.png")
+              : dec === "Patchy rain nearby"
+              ? require("../assets/drizzle.png")
               : { uri: null }
           }
         />
@@ -90,6 +96,12 @@ const WeatherData: React.FC = () => {
               ? "Lätt regnskur"
               : dec === "Light Drizzle"
               ? "Lätt duggregn"
+              : dec === "Light Drizzle, Drizzle And Rain"
+              ? "Lätt duggregn, duggregn och regn"
+              : dec === "Drizzle"
+              ? "Dugga"
+              : dec === "Patchy rain nearby"
+              ? "Fläckigt regn i närheten"
               : ""}
           </Text>
         </Text>

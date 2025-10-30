@@ -1,5 +1,3 @@
-const { EXPO_PUBLIC_API_URL, EXPO_PUBLIC_API_KEY } = process.env;
+export const apiUrl = "http://api.weatherstack.com";
 
-export const apiUrl = EXPO_PUBLIC_API_URL;
-
-export const apiKey = EXPO_PUBLIC_API_KEY;
+export const apiKey = "4002299c4024aaf87b643da6a693e1f2";
