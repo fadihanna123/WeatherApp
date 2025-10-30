@@ -20,6 +20,10 @@ export default ({ config }) => ({
   },
   assetBundlePatterns: ["**/*"],
   ios: {
+    config: {
+      apiUrl: process.env.EXPO_PUBLIC_API_URL,
+      apiKey: process.env.EXPO_PUBLIC_API_KEY,
+    },
     supportsTablet: true,
     bundleIdentifier: "com.fadihanna.weatherapp",
   },
@@ -27,6 +31,10 @@ export default ({ config }) => ({
     adaptiveIcon: {
       foregroundImage: "./src/assets/adaptive-icon.png",
       backgroundColor: "#FFFFFF",
+    },
+    config: {
+      apiUrl: process.env.EXPO_PUBLIC_API_URL,
+      apiKey: process.env.EXPO_PUBLIC_API_KEY,
     },
     package: "com.fadihanna.weatherapp",
   },

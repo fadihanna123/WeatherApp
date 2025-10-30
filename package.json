@@ -43,8 +43,9 @@
     "npm": "Please use Yarn instead of NPM to install dependencies"
   },
   "devDependencies": {
+    "@types/react": "~19.1.10",
+    "dotenv": "^17.2.3",
     "globals": "16.4.0",
-    "typescript": "~5.9.3",
-    "@types/react": "~19.1.10"
+    "typescript": "~5.9.3"
   }
 }
