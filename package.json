@@ -25,7 +25,7 @@
     "@react-navigation/bottom-tabs": "7.8.4",
     "@react-navigation/native": "7.1.19",
     "@reduxjs/toolkit": "2.9.2",
-    "axios": "1.13.2",
+    "axios": "1.13.5",
     "expo": "~54.0.21",
     "expo-location": "~19.0.7",
     "expo-updates": "~29.0.15",
