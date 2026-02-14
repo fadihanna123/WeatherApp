@@ -1,6 +1,3 @@
-import { Dispatch } from "redux";
-
-import { setError, setLoading } from "@redux/reducers";
 import { getData } from "./apiHandler";
 import { checkIfNoInput } from "./checkIfNoInput";
 
@@ -15,19 +12,34 @@ import { checkIfNoInput } from "./checkIfNoInput";
  */
 
 export const getWeather = async (
-  dispatch: Dispatch<any>,
-  cityInput: string | undefined
+  cityInput: string | undefined,
+  setLoading: (loading: boolean) => void,
+  setError: (error: string) => void,
+  setViewSearchBox: (viewSearchBox: boolean) => void,
+  setTemp: (temp: number) => void,
+  setCityName: (cityName: string) => void,
+  setDec: (dec: string) => void,
+  setCityInput: (cityInput: string) => void,
 ): Promise<void> => {
   try {
-    dispatch(setLoading(true));
+    setLoading(true);
 
     const data = (await getData(cityInput)) as unknown as WeatherData;
 
     console.log("Response: ", JSON.stringify(data, null, "\t"));
 
-    checkIfNoInput(dispatch, data, cityInput);
+    checkIfNoInput(
+      data,
+      cityInput,
+      setViewSearchBox,
+      setError,
+      setTemp,
+      setCityName,
+      setDec,
+      setCityInput,
+    );
   } catch (err) {
-    dispatch(setError("There is no such city in the world...."));
+    setError("There is no such city in the world....");
   } finally {
     setLoading(false);
   }

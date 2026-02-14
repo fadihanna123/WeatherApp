@@ -8,7 +8,6 @@ A modern, cross-platform weather application built with React Native and Expo. T
 - Location-based weather information
 - Cross-platform support (iOS, Android)
 - Modern and responsive UI
-- Redux for state management
 - TypeScript for type safety
 
 ## Prerequisites
@@ -22,12 +21,14 @@ A modern, cross-platform weather application built with React Native and Expo. T
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/fadihanna123/WeatherApp.git
 cd WeatherApp
 ```
 
 2. Install dependencies:
+
 ```bash
 yarn setup
 ```
@@ -61,7 +62,6 @@ yarn web      # Web
 - React Native
 - Expo
 - TypeScript
-- Redux Toolkit
 - React Navigation
 - Axios
 

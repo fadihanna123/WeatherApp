@@ -1,18 +1,8 @@
-import * as Location from 'expo-location';
-import { Dispatch } from 'react';
-import { Alert } from 'react-native';
+import * as Location from "expo-location";
+import { Alert } from "react-native";
 
 // Components
-import {
-  setCityInput,
-  setCurrentDec,
-  setCurrentLoading,
-  setCurrentLoc,
-  setCurrentTemp,
-  setError,
-  setViewCurrent,
-} from '@redux/reducers';
-import { getData } from './apiHandler';
+import { getData } from "./apiHandler";
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -25,26 +15,32 @@ import { getData } from './apiHandler';
  * @returns Promise
  */
 export const getCurrentLocation = async (
-  dispatch: Dispatch<any>,
-  viewCurrent: boolean
+  viewCurrent: boolean,
+  setViewCurrent: (viewCurrent: boolean) => void,
+  setCurrentLoading: (currentLoading: boolean) => void,
+  setCurrentDec: (currentDec: string) => void,
+  setCurrentLoc: (currentLoc: string) => void,
+  setCurrentTemp: (currentTemp: number) => void,
+  setError: (error: string) => void,
+  setCityInput: (cityInput: string) => void,
 ) => {
   try {
-    dispatch(setViewCurrent(true));
+    setViewCurrent(true);
 
-    dispatch(setCurrentLoading(true));
+    setCurrentLoading(true);
 
     const { status } = await Location.requestForegroundPermissionsAsync();
 
-    if (status !== 'granted') {
+    if (status !== "granted") {
       Alert.alert(
-        'You need to allow location services to use this app, please!'
+        "You need to allow location services to use this app, please!",
       );
       return;
     }
 
     const data: any = await getData();
 
-    console.log('Response: ', JSON.stringify(data, null, '\t'));
+    console.log("Response: ", JSON.stringify(data, null, "\t"));
 
     if (
       viewCurrent &&
@@ -52,17 +48,17 @@ export const getCurrentLocation = async (
       data.location.name &&
       data.current.weather_descriptions[0]
     ) {
-      dispatch(setCurrentTemp(data.current.temperature));
+      setCurrentTemp(data.current.temperature);
 
-      dispatch(setCurrentLoc(data.location.name));
+      setCurrentLoc(data.location.name);
 
-      dispatch(setCurrentDec(data.current.weather_descriptions[0]));
+      setCurrentDec(data.current.weather_descriptions[0]);
 
-      dispatch(setCityInput(''));
+      setCityInput("");
     }
   } catch (err) {
-    dispatch(setError('There is no such city in the world....'));
+    setError("There is no such city in the world....");
   } finally {
-    dispatch(setCurrentLoading(false));
+    setCurrentLoading(false);
   }
 };

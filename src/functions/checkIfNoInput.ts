@@ -1,14 +1,3 @@
-import { Dispatch } from 'redux';
-
-import {
-  setCityInput,
-  setCityName,
-  setDec,
-  setError,
-  setTemp,
-  setViewSearchBox,
-} from '@redux/reducers';
-
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
  */
@@ -22,29 +11,34 @@ import {
  */
 
 export const checkIfNoInput = (
-  dispatch: Dispatch<any>,
   data: WeatherData,
-  cityInput: string | undefined
+  cityInput: string | undefined,
+  setViewSearchBox: (viewSearchBox: boolean) => void,
+  setError: (error: string) => void,
+  setTemp: (temp: number) => void,
+  setCityName: (cityName: string) => void,
+  setDec: (dec: string) => void,
+  setCityInput: (cityInput: string) => void,
 ): void => {
   if (!cityInput) {
-    dispatch(setViewSearchBox(false));
+    setViewSearchBox(false);
 
-    dispatch(setError('Start typing first...'));
+    setError("Start typing first...");
   } else {
     if (
       data.current.temperature &&
       data.location.name &&
       data.current.weather_descriptions[0]
     ) {
-      dispatch(setViewSearchBox(true));
+      setViewSearchBox(true);
 
-      dispatch(setTemp(data.current.temperature));
+      setTemp(data.current.temperature);
 
-      dispatch(setCityName(data.location.name));
+      setCityName(data.location.name);
 
-      dispatch(setDec(data.current.weather_descriptions[0]));
+      setDec(data.current.weather_descriptions[0]);
 
-      dispatch(setCityInput?.(''));
+      setCityInput?.("");
     }
   }
 };

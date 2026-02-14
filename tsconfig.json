@@ -6,7 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react-native",
     "lib": ["dom", "esnext", "DOM.Iterable"],
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strict": true,
@@ -40,7 +40,7 @@
       "@assets/*": ["./assets/*"],
       "@components/*": ["./src/components/*"],
       "@functions/*": ["./src/functions/*"],
-      "@redux/*": ["./src/redux/*"],
+      "@states/*": ["./src/states/*"],
       "@styles/*": ["./src/styles/*"],
       "@types/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"]
