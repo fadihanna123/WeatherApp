@@ -11,36 +11,29 @@ import { checkIfNoInput } from "./checkIfNoInput";
  * @param cityInput - City value.
  */
 
-export const getWeather = async (
-  cityInput: string | undefined,
-  setLoading: (loading: boolean) => void,
-  setError: (error: string) => void,
-  setViewSearchBox: (viewSearchBox: boolean) => void,
-  setTemp: (temp: number) => void,
-  setCityName: (cityName: string) => void,
-  setDec: (dec: string) => void,
-  setCityInput: (cityInput: string) => void,
-): Promise<void> => {
+export const getWeather = async ({
+  cityInput,
+  setViewSearchBox,
+  setTemp,
+  setCityName,
+  setDec,
+  setCityInput,
+}: getWeatherFNTypes): Promise<void> => {
   try {
-    setLoading(true);
-
     const data = (await getData(cityInput)) as unknown as WeatherData;
 
     console.log("Response: ", JSON.stringify(data, null, "\t"));
 
-    checkIfNoInput(
+    checkIfNoInput({
       data,
       cityInput,
       setViewSearchBox,
-      setError,
       setTemp,
       setCityName,
       setDec,
       setCityInput,
-    );
+    });
   } catch (err) {
-    setError("There is no such city in the world....");
-  } finally {
-    setLoading(false);
+    console.log(err);
   }
 };

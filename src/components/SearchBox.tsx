@@ -16,7 +16,15 @@ import WeatherData from "./WeatherData";
 import { useGlobalContext } from "@states/index";
 
 const SearchBox: React.FC = () => {
-  const { cityInput, setCityInput, viewSearchBox } = useGlobalContext();
+  const {
+    cityInput,
+    setCityInput,
+    viewSearchBox,
+    setViewSearchBox,
+    setTemp,
+    setCityName,
+    setDec,
+  } = useGlobalContext();
   const scheme = useColorScheme();
 
   return (
@@ -38,17 +46,41 @@ const SearchBox: React.FC = () => {
             onKeyPress={(event): void => {
               if (event.nativeEvent.key === "Enter" && cityInput !== "") {
                 setCityInput("");
-                getWeather(cityInput);
+                getWeather({
+                  cityInput,
+                  setViewSearchBox,
+                  setTemp,
+                  setCityName,
+                  setDec,
+                  setCityInput,
+                });
               }
             }}
             onSubmitEditing={() => {
-              (getWeather(cityInput) as any, 1500);
+              getWeather({
+                cityInput,
+                setViewSearchBox,
+                setTemp,
+                setCityName,
+                setDec,
+                setCityInput,
+              });
             }}
           />
           <Button
             title="Search"
             color="green"
-            onPress={() => cityInput && getWeather(cityInput)}
+            onPress={() =>
+              cityInput &&
+              getWeather({
+                cityInput,
+                setViewSearchBox,
+                setTemp,
+                setCityName,
+                setDec,
+                setCityInput,
+              })
+            }
           />
         </View>
         {viewSearchBox && <WeatherData />}

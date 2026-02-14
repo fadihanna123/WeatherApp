@@ -4,7 +4,7 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from "@react-navigation/native";
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { useColorScheme } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { getCurrentLocation } from "@functions/getCurrentLocation";
@@ -15,32 +15,24 @@ import SearchBox from "@components/SearchBox";
 import About from "@components/About";
 import { useGlobalContext } from "@states/index";
 
-const Layout: React.FC = () => {
+const Layout: FC = () => {
   const {
     currentDec,
-    viewCurrent,
-    setViewCurrent,
-    setCurrentLoading,
     setCurrentDec,
     setCurrentLoc,
     setCurrentTemp,
-    setError,
     setCityInput,
   } = useGlobalContext();
   const Tab = createBottomTabNavigator();
   const scheme = useColorScheme();
 
   useEffect(() => {
-    getCurrentLocation(
-      viewCurrent,
-      setViewCurrent,
-      setCurrentLoading,
+    getCurrentLocation({
       setCurrentDec,
       setCurrentLoc,
       setCurrentTemp,
-      setError,
       setCityInput,
-    );
+    });
   }, []);
 
   return (

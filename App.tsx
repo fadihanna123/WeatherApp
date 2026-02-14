@@ -10,12 +10,9 @@ const App: FC = () => {
   const [cityName, setCityName] = useState<string>("");
   const [currentDec, setCurrentDec] = useState<string>("");
   const [currentLoc, setCurrentLoc] = useState<string>("");
-  const [currentTemp, setCurrentTemp] = useState<number>(0);
-  const [currentLoading, setCurrentLoading] = useState<boolean>(false);
-  const [viewCurrent, setViewCurrent] = useState<boolean>(false);
+  const [currentTemp, setCurrentTemp] = useState<number | null>(null);
   const [dec, setDec] = useState<string>("");
   const [temp, setTemp] = useState<number>(0);
-  const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [viewSearchBox, setViewSearchBox] = useState<boolean>(false);
 
@@ -32,16 +29,10 @@ const App: FC = () => {
         setCurrentLoc,
         currentTemp,
         setCurrentTemp,
-        currentLoading,
-        setCurrentLoading,
-        viewCurrent,
-        setViewCurrent,
         dec,
         setDec,
         temp,
         setTemp,
-        error,
-        setError,
         loading,
         setLoading,
         viewSearchBox,

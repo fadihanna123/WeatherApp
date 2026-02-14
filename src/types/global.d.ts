@@ -56,6 +56,32 @@ declare global {
     location: LocationOfWeatherData;
     current: CurrentOfWeatherData;
   }
+
+  interface getCurrentLocationFNTypes {
+    setCurrentDec: (currentDec: string) => void;
+    setCurrentLoc: (currentLoc: string) => void;
+    setCurrentTemp: (currentTemp: number) => void;
+    setCityInput: (cityInput: string) => void;
+  }
+
+  interface getWeatherFNTypes {
+    cityInput: string | undefined;
+    setViewSearchBox: (viewSearchBox: boolean) => void;
+    setTemp: (temp: number) => void;
+    setCityName: (cityName: string) => void;
+    setDec: (dec: string) => void;
+    setCityInput: (cityInput: string) => void;
+  }
+
+  interface checkIfNoInputFNTypes {
+    data: WeatherData;
+    cityInput: string | undefined;
+    setViewSearchBox: (viewSearchBox: boolean) => void;
+    setTemp: (temp: number) => void;
+    setCityName: (cityName: string) => void;
+    setDec: (dec: string) => void;
+    setCityInput: (cityInput: string) => void;
+  }
 }
 
 export {};

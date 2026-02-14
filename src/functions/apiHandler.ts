@@ -1,7 +1,7 @@
-import * as Location from 'expo-location';
+import * as Location from "expo-location";
 
-import { request } from '@api/request';
-import { apiKey } from '@utils/envs';
+import { request } from "@api/request";
+import { apiKey } from "@utils/envs";
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -13,9 +13,9 @@ import { apiKey } from '@utils/envs';
  * @returns { Promise<void> } Promise contains weather-data
  */
 export const getData = async (
-  cityinput?: string | undefined
+  cityinput?: string | undefined,
 ): Promise<void> => {
-  let val: string | string[] = '';
+  let val: string | string[] = "";
 
   if (!cityinput) {
     const location = await Location.getCurrentPositionAsync({});

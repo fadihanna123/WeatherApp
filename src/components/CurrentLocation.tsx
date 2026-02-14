@@ -8,32 +8,23 @@ import { useGlobalContext } from "@states/index";
 
 const CurrentLocation: React.FC = () => {
   const {
-    viewCurrent,
     currentLoc,
     currentDec,
     currentTemp,
-    currentLoading,
-    setViewCurrent,
-    setCurrentLoading,
     setCurrentDec,
     setCurrentLoc,
     setCurrentTemp,
-    setError,
     setCityInput,
   } = useGlobalContext();
   const scheme = useColorScheme();
 
   useEffect(() => {
-    getCurrentLocation(
-      viewCurrent,
-      setViewCurrent,
-      setCurrentLoading,
+    getCurrentLocation({
       setCurrentDec,
       setCurrentLoc,
       setCurrentTemp,
-      setError,
       setCityInput,
-    );
+    });
   }, []);
 
   return (
@@ -46,7 +37,7 @@ const CurrentLocation: React.FC = () => {
           ]}
         >
           {"\n"}
-          {!currentLoading ? currentLoc : ""} {"\n"}
+          {currentLoc} {"\n"}
         </Text>
         <Image
           style={weatherDataStyles.tempImg}
@@ -61,7 +52,7 @@ const CurrentLocation: React.FC = () => {
                     ? require("../assets/snowlight.png")
                     : currentDec === "Overcast "
                       ? require("../assets/overcast.png")
-                      : currentDec === "Clear"
+                      : currentDec === "Clear "
                         ? require("../assets/clear.png")
                         : currentDec === "Heavy snow"
                           ? require("../assets/heavysnow.png")
@@ -89,11 +80,11 @@ const CurrentLocation: React.FC = () => {
           <Text
             style={[
               weatherDataStyles.tempInfo,
-              { color: currentTemp < 0 ? "#ff0000" : "#fff" },
+              { color: currentTemp! < 0 ? "#ff0000" : "#fff" },
               { color: scheme === "dark" ? "#fff" : "#000" },
             ]}
           >
-            {!currentLoading ? currentTemp : ""}
+            {currentTemp}
           </Text>
           {"\n"}
           <Text
@@ -102,43 +93,40 @@ const CurrentLocation: React.FC = () => {
               { color: scheme === "dark" ? "#fff" : "#000" },
             ]}
           >
-            {!currentLoading
-              ? currentDec === "Sunny"
-                ? "Solig"
-                : currentDec === "Partly Cloudy "
-                  ? "Delvis molnigt"
-                  : currentDec === "Rain"
-                    ? "Regnig"
-                    : currentDec === "Light snow"
-                      ? "Lätt snö"
-                      : currentDec === "Overcast"
-                        ? "Molnig"
-                        : currentDec === "Clear"
-                          ? "Klar"
-                          : currentDec === "Heavy snow"
-                            ? "Tung snö"
-                            : currentDec === "Freezing Unknown Precipitation"
-                              ? "Frysning Okänd nederbörd"
-                              : currentDec === "Cloudy"
-                                ? "Molnig"
-                                : currentDec === "Smoke"
-                                  ? "Rök"
-                                  : currentDec === "Mist"
-                                    ? "Dimma"
-                                    : currentDec === "Light rain shower"
-                                      ? "Lätt regnskur"
-                                      : currentDec === "Light Drizzle"
-                                        ? "Lätt duggregn"
-                                        : currentDec ===
-                                            "Light Drizzle, Drizzle And Rain"
-                                          ? "Lätt duggregn, duggregn och regn"
-                                          : currentDec === "Drizzle"
-                                            ? "Dugga"
-                                            : currentDec ===
-                                                "Patchy rain nearby"
-                                              ? "Fläckigt regn i närheten"
-                                              : ""
-              : ""}
+            {currentDec === "Sunny"
+              ? "Solig"
+              : currentDec === "Partly Cloudy "
+                ? "Delvis molnigt"
+                : currentDec === "Rain"
+                  ? "Regnig"
+                  : currentDec === "Light snow"
+                    ? "Lätt snö"
+                    : currentDec === "Overcast"
+                      ? "Molnig"
+                      : currentDec === "Clear"
+                        ? "Klar"
+                        : currentDec === "Heavy snow"
+                          ? "Tung snö"
+                          : currentDec === "Freezing Unknown Precipitation"
+                            ? "Frysning Okänd nederbörd"
+                            : currentDec === "Cloudy"
+                              ? "Molnig"
+                              : currentDec === "Smoke"
+                                ? "Rök"
+                                : currentDec === "Mist"
+                                  ? "Dimma"
+                                  : currentDec === "Light rain shower"
+                                    ? "Lätt regnskur"
+                                    : currentDec === "Light Drizzle"
+                                      ? "Lätt duggregn"
+                                      : currentDec ===
+                                          "Light Drizzle, Drizzle And Rain"
+                                        ? "Lätt duggregn, duggregn och regn"
+                                        : currentDec === "Drizzle"
+                                          ? "Dugga"
+                                          : currentDec === "Patchy rain nearby"
+                                            ? "Fläckigt regn i närheten"
+                                            : ""}
           </Text>
         </Text>
       </View>

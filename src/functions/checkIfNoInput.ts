@@ -10,35 +10,32 @@
  * @returns Void
  */
 
-export const checkIfNoInput = (
-  data: WeatherData,
-  cityInput: string | undefined,
-  setViewSearchBox: (viewSearchBox: boolean) => void,
-  setError: (error: string) => void,
-  setTemp: (temp: number) => void,
-  setCityName: (cityName: string) => void,
-  setDec: (dec: string) => void,
-  setCityInput: (cityInput: string) => void,
-): void => {
+export const checkIfNoInput = ({
+  data,
+  cityInput,
+  setViewSearchBox,
+  setTemp,
+  setCityName,
+  setDec,
+  setCityInput,
+}: checkIfNoInputFNTypes): void => {
   if (!cityInput) {
-    setViewSearchBox(false);
+    return;
+  }
 
-    setError("Start typing first...");
-  } else {
-    if (
-      data.current.temperature &&
-      data.location.name &&
-      data.current.weather_descriptions[0]
-    ) {
-      setViewSearchBox(true);
+  if (
+    data.current.temperature &&
+    data.location.name &&
+    data.current.weather_descriptions[0]
+  ) {
+    setViewSearchBox(true);
 
-      setTemp(data.current.temperature);
+    setTemp(data.current.temperature);
 
-      setCityName(data.location.name);
+    setCityName(data.location.name);
 
-      setDec(data.current.weather_descriptions[0]);
+    setDec(data.current.weather_descriptions[0]);
 
-      setCityInput?.("");
-    }
+    setCityInput?.("");
   }
 };

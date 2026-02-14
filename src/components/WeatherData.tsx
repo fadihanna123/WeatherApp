@@ -23,9 +23,40 @@ const WeatherData: React.FC = () => {
         <View>
           <Image
             style={[weatherDataStyles.tempImg]}
-            source={{
-              uri: "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0027_light_snow_showers_night.png",
-            }}
+            source={
+              dec === "Sunny"
+                ? require("../assets/sunny.png")
+                : dec === "Partly Cloudy "
+                  ? require("../assets/partlycloudy.png")
+                  : dec === "Rain"
+                    ? require("../assets/rain.png")
+                    : dec === "Light snow"
+                      ? require("../assets/snowlight.png")
+                      : dec === "Overcast "
+                        ? require("../assets/overcast.png")
+                        : dec === "Clear "
+                          ? require("../assets/clear.png")
+                          : dec === "Heavy snow"
+                            ? require("../assets/heavysnow.png")
+                            : dec === "Freezing Unknown Precipitation"
+                              ? require("../assets/freezingrain.png")
+                              : dec === "Cloudy "
+                                ? require("../assets/cloudy.png")
+                                : dec === "Mist"
+                                  ? require("../assets/mist.png")
+                                  : dec === "Light rain shower"
+                                    ? require("../assets/light_rain_shower.png")
+                                    : dec === "Light Drizzle"
+                                      ? require("../assets/light_drizzle.png")
+                                      : dec ===
+                                          "Light Drizzle, Drizzle And Rain"
+                                        ? require("../assets/light_drizzle.png")
+                                        : dec === "Drizzle"
+                                          ? require("../assets/drizzle.png")
+                                          : dec === "Patchy rain nearby"
+                                            ? require("../assets/patchy_rain_nearby.png")
+                                            : { uri: null }
+            }
           />
         </View>
         <Text

@@ -8,6 +8,7 @@ export const weatherDataStyles = StyleSheet.create({
     width: "100%",
     height: "50%",
     margin: 10,
+    resizeMode: "contain",
   },
   info: {
     margin: 20,
