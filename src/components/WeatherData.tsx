@@ -8,6 +8,7 @@ import { useGlobalContext } from "@states/index";
 const WeatherData: React.FC = () => {
   const { dec, cityName, temp } = useGlobalContext();
   const scheme = useColorScheme();
+  const isDark = scheme === "dark";
 
   return (
     <View>
@@ -15,7 +16,7 @@ const WeatherData: React.FC = () => {
         <Text
           style={[
             weatherDataStyles.cityname,
-            { color: scheme === "dark" ? "#fff" : "#000" },
+            { color: isDark ? "#fff" : "#000" },
           ]}
         >
           {cityName} {"\n"}
@@ -60,10 +61,7 @@ const WeatherData: React.FC = () => {
           />
         </View>
         <Text
-          style={[
-            weatherDataStyles.info,
-            { color: scheme === "dark" ? "#fff" : "#000" },
-          ]}
+          style={[weatherDataStyles.info, { color: isDark ? "#fff" : "#000" }]}
         >
           <Text
             style={[

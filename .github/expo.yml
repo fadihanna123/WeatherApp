@@ -12,7 +12,7 @@ jobs:
       - name: 🏗 Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 22.19
+          node-version: 24.13.1
           cache: yarn
 
       - name: 🏗 Setup EAS
@@ -26,3 +26,4 @@ jobs:
 
       - name: 🚀 Create update
         run: eas update --auto --non-interactive
+

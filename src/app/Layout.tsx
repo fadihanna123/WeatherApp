@@ -25,6 +25,7 @@ const Layout: FC = () => {
   } = useGlobalContext();
   const Tab = createBottomTabNavigator();
   const scheme = useColorScheme();
+  const isDark = scheme === "dark";
 
   useEffect(() => {
     getCurrentLocation({
@@ -36,7 +37,7 @@ const Layout: FC = () => {
   }, []);
 
   return (
-    <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
+    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
@@ -66,19 +67,23 @@ const Layout: FC = () => {
                                     ? "partly-sunny"
                                     : currentDec === "Light rain shower"
                                       ? "ios-rainy"
-                                      : "partly-sunny";
+                                      : "location-outline";
             } else if (route.name === "Search Location") {
-              iconName = "location-outline";
+              iconName = "search";
             } else if (route.name === "About") {
-              iconName = "information";
+              iconName = "information-circle";
             }
 
             return (
               <Ionicons name={iconName as any} size={size} color={color} />
             );
           },
-          tabBarActiveTintColor: "tomato",
-          tabBarInactiveTintColor: "gray",
+          tabBarActiveTintColor: isDark ? "#60A5FA" : "#3B82F6",
+          tabBarInactiveTintColor: isDark ? "#9CA3AF" : "#6B7280",
+          tabBarLabelStyle: {
+            fontSize: 12,
+            marginTop: 4,
+          },
         })}
       >
         <Tab.Screen name="Current Location" component={CurrentLocation} />

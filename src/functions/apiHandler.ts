@@ -1,7 +1,7 @@
 import * as Location from "expo-location";
 
 import { request } from "@api/request";
-import { apiKey } from "@utils/envs";
+import { apiKey } from "@utils/consts";
 
 /**
  * @author Fadi Hanna <fhanna181@gmail.com>
@@ -17,14 +17,22 @@ export const getData = async (
 ): Promise<void> => {
   let val: string | string[] = "";
 
-  if (!cityinput) {
-    const location = await Location.getCurrentPositionAsync({});
-    const address = await Location.reverseGeocodeAsync(location.coords);
-    address.forEach((item: any) => (val = item.city));
-  } else {
-    val = cityinput;
-  }
+  try {
+    if (!cityinput) {
+      const location = await Location.getCurrentPositionAsync({});
+      const address = await Location.reverseGeocodeAsync(location.coords);
+      address.forEach((item: any) => (val = item.city));
+    } else {
+      val = cityinput;
+    }
 
-  const endPoint = `current?access_key=${apiKey}&query=${val}`;
-  return await request.get(endPoint);
+    const endPoint = `current?access_key=${apiKey}&query=${val}`;
+    return await request.get(endPoint);
+  } catch (error) {
+    if (error) {
+      alert(
+        "The app unable to fetch the weather data.\nTry again later, please!",
+      );
+    }
+  }
 };

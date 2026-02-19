@@ -12,7 +12,7 @@ A modern, cross-platform weather application built with React Native and Expo. T
 
 ## Prerequisites
 
-- Node.js (>=16.0.0 <=22.x.x)
+- Node.js (>=16.0.0 <=25.x.x)
 - Yarn (recommended package manager)
 - Expo CLI
 - iOS Simulator (for iOS development)

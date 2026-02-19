@@ -1,10 +1,10 @@
-import axios from 'axios';
-import { apiUrl } from '@utils/envs';
+import axios from "axios";
+import { apiUrl } from "@utils/consts";
 
-const globalHeader: string = 'application/json';
+const globalHeader: string = "application/json";
 
 axios.defaults.baseURL = apiUrl;
-axios.defaults.headers.common['Content-Type'] = globalHeader;
+axios.defaults.headers.common["Content-Type"] = globalHeader;
 
 export const request = {
   get: async (url: string): Promise<void> => {
@@ -15,7 +15,7 @@ export const request = {
   post: async (
     url: string,
     redata: any,
-    headers?: { headers: Record<string, string> }
+    headers?: { headers: Record<string, string> },
   ): Promise<void> => {
     const { data } = await axios.post(url, redata, headers);
     return data;
@@ -24,11 +24,11 @@ export const request = {
   put: async (
     url: string,
     data: any,
-    headers?: { headers: Record<string, string> }
+    headers?: { headers: Record<string, string> },
   ): Promise<void> => await axios.put(url, data, headers),
 
   delete: async (
     url: string,
-    headers?: { headers: Record<string, string> }
+    headers?: { headers: Record<string, string> },
   ): Promise<void> => await axios.delete(url, headers),
 };

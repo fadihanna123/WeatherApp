@@ -26,6 +26,7 @@ const SearchBox: React.FC = () => {
     setDec,
   } = useGlobalContext();
   const scheme = useColorScheme();
+  const isDark = scheme === "dark";
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -35,14 +36,14 @@ const SearchBox: React.FC = () => {
             clearButtonMode="always"
             defaultValue={cityInput}
             onChangeText={(cityinput) => setCityInput(cityinput)}
+            placeholder="Search City"
             style={[
               weatherFormStyles.textinput,
               {
-                color: scheme === "dark" ? "#fff" : "#000",
-                borderColor: scheme === "dark" ? "#FF0000" : "#000",
+                color: isDark ? "#fff" : "#000",
+                borderColor: isDark ? "#FF0000" : "#000",
               },
             ]}
-            placeholder="Search City"
             onKeyPress={(event): void => {
               if (event.nativeEvent.key === "Enter" && cityInput !== "") {
                 setCityInput("");

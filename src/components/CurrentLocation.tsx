@@ -17,6 +17,7 @@ const CurrentLocation: React.FC = () => {
     setCityInput,
   } = useGlobalContext();
   const scheme = useColorScheme();
+  const isDark = scheme === "dark";
 
   useEffect(() => {
     getCurrentLocation({
@@ -33,7 +34,7 @@ const CurrentLocation: React.FC = () => {
         <Text
           style={[
             weatherDataStyles.cityname,
-            { color: scheme === "dark" ? "#fff" : "#000" },
+            { color: isDark ? "#fff" : "#000" },
           ]}
         >
           {"\n"}
@@ -81,7 +82,7 @@ const CurrentLocation: React.FC = () => {
             style={[
               weatherDataStyles.tempInfo,
               { color: currentTemp! < 0 ? "#ff0000" : "#fff" },
-              { color: scheme === "dark" ? "#fff" : "#000" },
+              { color: isDark ? "#fff" : "#000" },
             ]}
           >
             {currentTemp}
@@ -90,7 +91,7 @@ const CurrentLocation: React.FC = () => {
           <Text
             style={[
               weatherDataStyles.decInfo,
-              { color: scheme === "dark" ? "#fff" : "#000" },
+              { color: isDark ? "#fff" : "#000" },
             ]}
           >
             {currentDec === "Sunny"
